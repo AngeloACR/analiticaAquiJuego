@@ -2,7 +2,8 @@ module.exports = {
 
 
     // SERVERS DATA
-    webPort: 16800,
+    webPortColombia: 16800,
+    webPortPeru: 17800,
     host: 'localhost',
 
 
