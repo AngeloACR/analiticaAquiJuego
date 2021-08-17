@@ -1,4 +1,3 @@
-<script type="text/javascript">
   window.addEventListener('load', function () {
 
     let info = {
@@ -1865,4 +1864,3 @@
     setMenuPromo();
 
   })
-</script>
