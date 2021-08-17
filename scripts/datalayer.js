@@ -1,863 +1,585 @@
-  window.addEventListener('load', function () {
+window.addEventListener('load', function () {
 
-    let info = {
-      "transversal": {
-        "lugar": "home",
-        "login": {
-          "selector": ".bottone .bottone-login",
-          "evento": "click",
-          "child": 0
-        },
-        "registro": {
-          "selector": ".bottone .bottone-login",
-          "evento": "click",
-          "child": 1
-        }
+  let info = {
+    "transversal": {
+      "lugar": "home",
+      "login": {
+        "selector": ".bottone .bottone-login",
+        "evento": "click",
+        "child": 0
       },
       "registro": {
-        "lugar": "modal registro",
-        "boton": {
-          "selector": "#cg-signup-final-button",
+        "selector": ".bottone .bottone-login",
+        "evento": "click",
+        "child": 1
+      }
+    },
+    "registro": {
+      "lugar": "modal registro",
+      "boton": {
+        "selector": "#cg-signup-final-button",
+        "evento": "click",
+        "child": 0
+      },
+      "exitoso": {
+        "timeout": 2000,
+        "evento": "impresion",
+        "selector": "h2.colore-1.testo-grande",
+        "child": 0,
+        "texto": "Felicitaciones"
+      },
+      "error": {
+        "timeout": 2000,
+        "evento": "impresion",
+        "selector": ".cg-error-container"
+      }
+    },
+    "micuenta": {
+      "lugar": "micuenta",
+      "carga_documento": {
+        "selector": "#cg-uploadDocButton",
+        "evento": "click",
+        "child": 0
+      },
+      "retiro": {
+        "retiro1": {
+          "selector": "#xp-withdraw-method-bonifico-bancario-co",
           "evento": "click",
-          "child": 0
-        },
-        "exitoso": {
-          "timeout": 2000,
-          "evento": "impresion",
-          "selector": "h2.colore-1.testo-grande",
           "child": 0,
-          "texto": "Felicitaciones"
-        },
-        "error": {
-          "timeout": 2000,
-          "evento": "impresion",
-          "selector": ".cg-error-container"
-        }
-      },
-      "micuenta": {
-        "lugar": "micuenta",
-        "carga_documento": {
-          "selector": "#cg-uploadDocButton",
-          "evento": "click",
-          "child": 0
-        },
-        "retiro": {
-          "retiro1": {
-            "selector": "#xp-withdraw-method-bonifico-bancario-co",
-            "evento": "click",
-            "child": 0,
-            "value": {
-              "selector": "#bonifico-bancario-co-withdrawal-amount",
-              "child": 0
-            },
-            "boton": {
-              "selector": "div button.xp-confirm-button",
-              "evento": "click",
-              "child": 0
-            }
-          },
-          "retiro2": {
-            "selector": "#xp-withdraw-method-voucher",
-            "evento": "click",
-            "child": 0,
-            "value": {
-              "selector": "#voucher-withdrawal-amount",
-              "child": 0
-            },
-            "boton": {
-              "selector": "div button.xp-confirm-button",
-              "evento": "click",
-              "child": 0
-            }
-          },
-          "retiro3": {
-            "selector": "#xp-withdraw-method-voucher-efecty",
-            "evento": "click",
-            "child": 0,
-            "value": {
-              "selector": "#voucher-efecty-withdrawal-amount",
-              "child": 0
-            },
-            "boton": {
-              "selector": "div button.xp-confirm-button",
-              "evento": "click",
-              "child": 0
-            }
-          },
-          "retiro4": {
-            "selector": "#xp-deposit-method-scratch-card",
-            "evento": "click",
-            "child": 0,
-            "value": {
-              "selector": "#astropay-bonifico-bancario-co-withdrawal-amount",
-              "child": 0
-            },
-            "boton": {
-              "selector": "div button.xp-confirm-button",
-              "evento": "click",
-              "child": 0
-            }
-          }
-        },
-        "recarga": {
-          "recarga1": {
-            "selector": "#xp-deposit-method-scratch-card",
-            "evento": "click",
-            "child": 0,
-            "value": {
-              "selector": "#scratch-card-code",
-              "child": 0
-            },
-            "boton": {
-              "selector": "div button.xp-deposit-button",
-              "evento": "click",
-              "child": 0
-            }
-          },
-          "recarga2": {
-            "selector": "#xp-deposit-method-payu-cc",
-            "evento": "click",
-            "child": 0,
-            "value": {
-              "selector": "#payu-cc-deposit-amount",
-              "child": 0
-            },
-            "boton": {
-              "selector": "div button.xp-deposit-button",
-              "evento": "click",
-              "child": 0
-            }
-          },
-          "recarga3": {
-            "selector": "#xp-deposit-method-astropay-pse",
-            "evento": "click",
-            "child": 0,
-            "value": {
-              "selector": "#astropay-pse-deposit-amount",
-              "child": 0
-            },
-            "boton": {
-              "evento": "click",
-              "selector": "div button.xp-deposit-button",
-              "child": 0
-            }
-          },
-          "recarga4": {
-            "selector": "#xp-deposit-method-payu-pse",
-            "evento": "click",
-            "child": 0,
-            "value": {
-              "selector": "#payu-pse-deposit-amount",
-              "child": 0
-            },
-            "boton": {
-              "selector": "div button.xp-deposit-button",
-              "evento": "click",
-              "child": 0
-            }
-          },
-          "recarga5": {
-            "selector": "#xp-deposit-method-astropay-efecty",
-            "evento": "click",
-            "child": 0,
-            "value": {
-              "selector": "#astropay-efecty-deposit-amount",
-              "child": 0
-            },
-            "boton": {
-              "selector": "div button.xp-deposit-button",
-              "evento": "click",
-              "child": 0
-            }
-          },
-          "recarga6": {
-            "selector": "#xp-deposit-method-payu-efecty",
-            "evento": "click",
-            "child": 0,
-            "value": {
-              "selector": "#payu-efecty-deposit-amount",
-              "child": 0
-            },
-            "boton": {
-              "selector": "div button.xp-deposit-button",
-              "evento": "click",
-              "child": 0
-            }
-          },
-          "recarga7": {
-            "selector": "#xp-deposit-method-astropay-baloto",
-            "evento": "click",
-            "child": 0,
-            "value": {
-              "selector": "#astropay-baloto-deposit-amount",
-              "child": 0
-            },
-            "boton": {
-              "selector": "div button.xp-deposit-button",
-              "evento": "click",
-              "child": 0
-            }
-          },
-          "recarga8": {
-            "selector": "#xp-deposit-method-payu-baloto",
-            "evento": "click",
-            "child": 0,
-            "value": {
-              "selector": "#payu-baloto-deposit-amount",
-              "child": 0
-            },
-            "boton": {
-              "selector": "div button.xp-deposit-button",
-              "evento": "click",
-              "child": 0
-            }
-          },
-          "recarga9": {
-            "selector": "#xp-deposit-method-astropay-puntored",
-            "evento": "click",
-            "child": 0,
-            "value": {
-              "selector": "#astropay-puntored-deposit-amount",
-              "child": 0
-            },
-            "boton": {
-              "selector": "div button.xp-deposit-button",
-              "evento": "click",
-              "child": 0
-            }
-          }
-        }
-      },
-      "menu_principal": {
-        "lugar": "home",
-        "evento": "click",
-        "selector": ".menu-principale-barra .menu-principale li"
-      },
-      "banners_home": {
-        "lugar": "home",
-        "izquierda": {
-          "selector": "#sidebar-sx .banner-widget-dx",
-          "evento": ["click", "impresion"],
-          "child": 0
-        },
-        "centro": {
-          "selector": "#carosello-sport-1",
-          "evento": "impresion",
-          "child": 0
-        },
-        "derecha": {
-          "selector": "#sidebar-dx .banner-widget-dx",
-          "evento": ["click", "impresion"],
-          "child": 0
-        }
-      },
-      "filtro_lateral_home": {
-        "lugar": "home",
-        "filtros_horarios": {
-          "selector": "#sidebar-sx .fasce-orarie maiuscolo span",
-          "evento": "click"
-        },
-        "filtros_diarios": {
-          "selector": "#sidebar-sx .filtro-settimana maiuscolo allinea-centro a",
-          "evento": "click"
-        },
-        "busqueda": {
-          "selector": "#sidebar-sx .widget-ricerca-side #match-search-input"
-        }
-      },
-      "deportes_home": {
-        "lugar": "home",
-        "destacados": {
-          "selector": "#sidebar-sx .widget-competizioni-side .contenitore-competizioni-sport .card.elemento-competizioni-widget",
-          "evento": "click",
-          "nombre": {
-            "selector": ".titolo-accordion a"
-          },
-          "item": {
-            "padre": {
-              "evento": "click",
-              "selector": "div .regione-widget div.elemento-competizioni-widget"
-            },
-            "hijo": {
-              "evento": "click",
-              "selector": "div .regione-widget div.competizione-sub div.elemento-competizioni-widget"
-            }
-          }
-        }
-      },
-      "competencias_seleccion": {
-        "destacados": {
-          "evento": "click",
-          "selector": "#sidebar-sx .widget-competizioni-side .apri-partite-in-evidenza a"
-        }
-      },
-      "menu_casino": {
-        "lugar": "casino",
-        "evento": "click",
-        "selector": "#menuContainer div a"
-      },
-      "filtro_casino": {
-        "lugar": "casino",
-        "evento": "click",
-        "selector": ".filtri-casino div",
-        "plataforma": {
-          "evento": "click",
-          "selector": "#listaPiattaforme #piattaforme div"
-        },
-        "ordenar": {
-          "evento": "click",
-          "selector": "div div .sortFilter"
-        }
-      },
-      "juegos_casino": {
-        "lugar": "casino",
-        "evento": "click",
-        "selector": "#contentGames .blocco-mosaico.game ",
-        "nombre": {
-          "selector": "div p a"
-        },
-        "boton": {
-          "selector": "div p.bottone"
-        }
-      },
-      "articulos_promo": {
-        "lugar": "promo",
-        "evento": "click",
-        "selector": ".promo-landing.container div div.elenco-promo .card.elemento-promozioni-modale.filter"
-      },
-      "menu_promo": {
-        "lugar": "promo",
-        "evento": "click",
-        "selector": ".promo-landing.container div div.elenco-promo .card.elemento-promozioni-modale.filter"
-      },
-
-      "apuestas_home": {
-        "lugar": "home",
-        "evento": "click",
-        "selector": ".contenitoreRiga",
-        "deporte-pais-liga": {
-          "selector": ".nome-competizione-sport span"
-        },
-        "nombre-equipos": {
-          "selector": "div .tabellaQuoteSquadre"
-        },
-        "apuestas": {
-          "selector": "div .tabellaQuoteContenitoreQuotazioni .contenitoreSetQuotazioni div .contenitoreSingolaQuota",
-          "nombre": {
-            "selector": "div .tabellaQuoteContenitoreQuotazioni .contenitoreSetQuotazioni .tipologiaQuotazione_FormaCompatta"
-          }
-        }
-      },
-      "apuestas_borradas_home": {
-        "timeout": 2000,
-
-        "lugar": "home",
-        "evento": "click",
-        "parent": {
-          "selector": ".carrello-scrollable div div"
-        },
-        "selector": "div div div.grid-schedina-intestazione_container-bottoni button i",
-        "deporte-pais-liga": {
-          "selector": "div div div.grid-schedina-intestazione_contenitore-testo p"
-        },
-        "apuestas": {
-          "selector": "div div div div div.grid-schedina-body_quote-riga_descrizione-quota p"
-        }
-      },
-      "apuestas_botones_home": {
-        "timeout": 2000,
-
-        "lugar": "home",
-        "evento": "click",
-        "parent": {
-          "selector": ".carrello-fixed .bottoni-schedina"
-        },
-        "selector": ".bottone",
-        "comprar": {
-          "selector": ".bottone.bg-verde"
-        }
-      },
-
-      "apuestas_live": {
-        "lugar": "live",
-        "evento": "click",
-        "selector": ".contenitore-table",
-        "pais-liga": {
-          "selector": ".titolo-competizione-live span"
-        },
-        "deporte": {
-          "selector": ".titolo-blocco-sport span"
-        },
-        "nombre-equipos": {
-          "selector": "div div div .tabellaQuoteSquadre"
-        },
-        "apuestas": {
-          "selector": "div div div .tabellaQuoteContenitoreQuotazioni .contenitoreSetQuotazioni div .contenitoreSingolaQuota",
-          "nombre": {
-            "selector": "div div div .tabellaQuoteContenitoreQuotazioni .contenitoreSetQuotazioni .tipologiaQuotazione_FormaCompatta"
-          }
-        }
-      },
-      "apuestas_borradas_live": {
-        "timeout": 2000,
-
-        "lugar": "live",
-        "evento": "click",
-        "parent": {
-          "selector": ".carrello-scrollable div div"
-        },
-        "selector": "div div div.grid-schedina-intestazione_container-bottoni button i",
-        "deporte-pais-liga": {
-          "selector": "div div div.grid-schedina-intestazione_contenitore-testo p"
-        },
-        "apuestas": {
-          "selector": "div div div div div.grid-schedina-body_quote-riga_descrizione-quota p"
-        }
-      },
-      "apuestas_botones_live": {
-        "timeout": 2000,
-
-        "lugar": "live",
-        "evento": "click",
-        "parent": {
-          "selector": ".carrello-fixed .bottoni-schedina"
-        },
-        "selector": ".bottone",
-        "comprar": {
-          "selector": ".bottone.bg-verde"
-        }
-      },
-
-      "carrito_carreras": {
-        "lugar": "virtual",
-        "evento": "click",
-        "parent": {
-          "selector": "#place table.riepilogocoupon tbody tr.editing .commands.verdescuro",
-          "apuesta": {
-            "timeout": 2000,
-            "selector": "span.scommetti",
+          "value": {
+            "selector": "#bonifico-bancario-co-withdrawal-amount",
             "child": 0
           },
-          "apuesta_imprime": {
-            "selector": "span.print.scommetti"
-          },
-          "anula": {
-            "selector": "span.annulla"
+          "boton": {
+            "selector": "div button.xp-confirm-button",
+            "evento": "click",
+            "child": 0
           }
         },
-        "parent_confirm": {
-          "selector": "#place table.riepilogocoupon tbody tr .commands.verdescuro",
-          "apuesta_imprime": {
-            "selector": "span.postcoupon"
+        "retiro2": {
+          "selector": "#xp-withdraw-method-voucher",
+          "evento": "click",
+          "child": 0,
+          "value": {
+            "selector": "#voucher-withdrawal-amount",
+            "child": 0
           },
-          "anula": {
-            "selector": "span.unfreeze"
+          "boton": {
+            "selector": "div button.xp-confirm-button",
+            "evento": "click",
+            "child": 0
+          }
+        },
+        "retiro3": {
+          "selector": "#xp-withdraw-method-voucher-efecty",
+          "evento": "click",
+          "child": 0,
+          "value": {
+            "selector": "#voucher-efecty-withdrawal-amount",
+            "child": 0
+          },
+          "boton": {
+            "selector": "div button.xp-confirm-button",
+            "evento": "click",
+            "child": 0
+          }
+        },
+        "retiro4": {
+          "selector": "#xp-deposit-method-scratch-card",
+          "evento": "click",
+          "child": 0,
+          "value": {
+            "selector": "#astropay-bonifico-bancario-co-withdrawal-amount",
+            "child": 0
+          },
+          "boton": {
+            "selector": "div button.xp-confirm-button",
+            "evento": "click",
+            "child": 0
           }
         }
       },
-      "apuestas_virtual_carreras": {
-        "lugar": "virtual",
-        "evento": "click",
-        "deporte": {
-          "selector": ".sportselectors div.btn.active"
-        },
-        "liga": {
-          "selector": ".listbox .listcontent .listitem choosed"
-        },
-        "apuesta_superior": {
-          "nombre_apuesta": {
-            "selector": "td.pari .triggersistiemi div.choose"
+      "recarga": {
+        "recarga1": {
+          "selector": "#xp-deposit-method-scratch-card",
+          "evento": "click",
+          "child": 0,
+          "value": {
+            "selector": "#scratch-card-code",
+            "child": 0
           },
-          "nombre_equipo": {
-            "selector": "td.left.mn"
-          },
-          "eleccion_apuesta_ganador": {
-            "selector": "table.grigliacani tbody tr td.quota.Winner"
-          },
-          "eleccion_apuesta_posicion": {
-            "selector": "table.grigliacani tbody tr td.quota.Placed"
-          },
-          "eleccion_apuesta_colocado": {
-            "selector": "table.grigliacani tbody tr td.quota.Show"
-          },
-          "eleccion_apuesta_combinacion": {
-            "selector": "table.grigliacani tbody tr td.ss.tnx"
+          "boton": {
+            "selector": "div button.xp-deposit-button",
+            "evento": "click",
+            "child": 0
           }
         },
-        "apuesta_inferior": {
-          "nombre_apuesta": {
-            "selector": ".tree .linguette.attiva"
+        "recarga2": {
+          "selector": "#xp-deposit-method-payu-cc",
+          "evento": "click",
+          "child": 0,
+          "value": {
+            "selector": "#payu-cc-deposit-amount",
+            "child": 0
           },
-          "nombre_equipo": {
-            "selector": "td.left.mn"
+          "boton": {
+            "selector": "div button.xp-deposit-button",
+            "evento": "click",
+            "child": 0
+          }
+        },
+        "recarga3": {
+          "selector": "#xp-deposit-method-astropay-pse",
+          "evento": "click",
+          "child": 0,
+          "value": {
+            "selector": "#astropay-pse-deposit-amount",
+            "child": 0
           },
-          "eleccion_apuesta_exacta": {
-            "selector": "div.Exacta table tbody tr td.quota"
+          "boton": {
+            "evento": "click",
+            "selector": "div button.xp-deposit-button",
+            "child": 0
+          }
+        },
+        "recarga4": {
+          "selector": "#xp-deposit-method-payu-pse",
+          "evento": "click",
+          "child": 0,
+          "value": {
+            "selector": "#payu-pse-deposit-amount",
+            "child": 0
           },
-          "eleccion_apuesta_quiniela": {
-            "selector": "div.Quinella table tbody tr td.quota"
+          "boton": {
+            "selector": "div button.xp-deposit-button",
+            "evento": "click",
+            "child": 0
+          }
+        },
+        "recarga5": {
+          "selector": "#xp-deposit-method-astropay-efecty",
+          "evento": "click",
+          "child": 0,
+          "value": {
+            "selector": "#astropay-efecty-deposit-amount",
+            "child": 0
           },
-          "eleccion_apuesta_trifecta": {
-            "selector": "div.Trifecta table tbody tr td.quota"
+          "boton": {
+            "selector": "div button.xp-deposit-button",
+            "evento": "click",
+            "child": 0
+          }
+        },
+        "recarga6": {
+          "selector": "#xp-deposit-method-payu-efecty",
+          "evento": "click",
+          "child": 0,
+          "value": {
+            "selector": "#payu-efecty-deposit-amount",
+            "child": 0
           },
-          "eleccion_apuesta_altro": {
-            "selector": "div.Altro table tbody tr td.quota"
+          "boton": {
+            "selector": "div button.xp-deposit-button",
+            "evento": "click",
+            "child": 0
+          }
+        },
+        "recarga7": {
+          "selector": "#xp-deposit-method-astropay-baloto",
+          "evento": "click",
+          "child": 0,
+          "value": {
+            "selector": "#astropay-baloto-deposit-amount",
+            "child": 0
+          },
+          "boton": {
+            "selector": "div button.xp-deposit-button",
+            "evento": "click",
+            "child": 0
+          }
+        },
+        "recarga8": {
+          "selector": "#xp-deposit-method-payu-baloto",
+          "evento": "click",
+          "child": 0,
+          "value": {
+            "selector": "#payu-baloto-deposit-amount",
+            "child": 0
+          },
+          "boton": {
+            "selector": "div button.xp-deposit-button",
+            "evento": "click",
+            "child": 0
+          }
+        },
+        "recarga9": {
+          "selector": "#xp-deposit-method-astropay-puntored",
+          "evento": "click",
+          "child": 0,
+          "value": {
+            "selector": "#astropay-puntored-deposit-amount",
+            "child": 0
+          },
+          "boton": {
+            "selector": "div button.xp-deposit-button",
+            "evento": "click",
+            "child": 0
           }
         }
-      },
-
-
-    }
-
-    /*REGISTRO*/
-    function setRegistro() {
-      let timeout = 2000
-      let signupButton = document.getElementById("cg-signup-final-button")
-      if (!signupButton) return
-      signupButton.addEventListener('click', function (e) {
-        setTimeout(() => {
-          let errorsBox = document.querySelectorAll('.cg-error-container');
-          if (errorsBox.length != 0) {
-            errorsBox.forEach(error => {
-              console.log(error);
-              let errorText = error.innerText;
-              dataLayer.push({ 'event': 'ga_event', 'category': 'Registro', 'action': 'Error', 'label': errorText, 'value': '' });
-            });
-          } else {
-
-            let successBox = document.querySelector("h2.colore-1.testo-grande");
-            console.log(successBox)
-            if (successBox.innerText == "Felicitaciones") {
-              dataLayer.push({ 'event': 'ga_event', 'category': 'Registro', 'action': 'Exitoso', 'label': 'Registro exitoso', 'value': '' });
-            }
-          }
-        }, timeout);
-      })
-    }
-    setRegistro();
-
-    /*MI CUENTA*/
-
-    function setCargaDocumento() {
-      let uploadButton = document.getElementById("cg-uploadDocButton");
-      if (!uploadButton) return;
-      uploadButton.addEventListener('click', function (e) {
-        console.log(e.target);
-        dataLayer.push({ 'event': 'ga_event', 'category': 'Mi cuenta :: Cargar documento', 'action': 'Click​', 'label': 'Enviar', 'value': '' });
-      })
-    }
-    setCargaDocumento();
-
-    function setRecarga() {
-      let recarga1 = document.getElementById("xp-deposit-method-scratch-card");
-      let recarga2 = document.getElementById("xp-deposit-method-payu-cc");
-      let recarga3 = document.getElementById("xp-deposit-method-astropay-pse");
-      let recarga4 = document.getElementById("xp-deposit-method-payu-pse");
-      let recarga5 = document.getElementById("xp-deposit-method-astropay-efecty");
-      let recarga6 = document.getElementById("xp-deposit-method-payu-efecty");
-      let recarga7 = document.getElementById("xp-deposit-method-astropay-baloto");
-      let recarga8 = document.getElementById("xp-deposit-method-payu-baloto");
-      let recarga9 = document.getElementById("xp-deposit-method-astropay-puntored");
-
-      let id1 = "xp-deposit-method-scratch-card"
-      let id2 = "xp-deposit-method-payu-cc"
-      let id3 = "xp-deposit-method-astropay-pse"
-      let id4 = "xp-deposit-method-payu-pse"
-      let id5 = "xp-deposit-method-astropay-efecty"
-      let id6 = "xp-deposit-method-payu-efecty"
-      let id7 = "xp-deposit-method-astropay-baloto"
-      let id8 = "xp-deposit-method-payu-baloto"
-      let id9 = "xp-deposit-method-astropay-puntored"
-
-      let depositButton1 = document.querySelectorAll(`#${id1} div button.xp-deposit-button`);
-      if (!depositButton1) return;
-
-      depositButton1.addEventLister('click', function (e) {
-        let value = document.getElementById("scratch-card-code");
-        console.log(value)
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Mi cuenta :: Recargas',
-          'action': 'scratch-card',
-          'label': 'Depósito',
-          'value': value
-        });
-
-      })
-      let depositButton2 = document.querySelectorAll(`#${id2} div button.xp-deposit-button`);
-      if (!depositButton2) return;
-
-      depositButton2.addEventLister('click', function (e) {
-        let value = document.getElementById("payu-cc-deposit-amount");
-        console.log(value)
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Mi cuenta :: Recargas',
-          'action': 'payu-cc',
-          'label': 'Depósito',
-          'value': value
-        });
-      })
-      let depositButton3 = document.querySelectorAll(`#${id3} div button.xp-deposit-button`);
-      if (!depositButton3) return;
-
-      depositButton3.addEventLister('click', function (e) {
-        let value = document.getElementById("astropay-pse-deposit-amount");
-        console.log(value)
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Mi cuenta :: Recargas',
-          'action': 'astropay-pse',
-          'label': 'Depósito',
-          'value': value
-        });
-      })
-      let depositButton4 = document.querySelectorAll(`#${id4} div button.xp-deposit-button`);
-      if (!depositButton4) return;
-
-      depositButton4.addEventLister('click', function (e) {
-        let value = document.getElementById("payu-pse-deposit-amount");
-        console.log(value)
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Mi cuenta :: Recargas',
-          'action': 'payu-pse',
-          'label': 'Depósito',
-          'value': value
-        });
-      })
-      let depositButton5 = document.querySelectorAll(`#${id5} div button.xp-deposit-button`);
-      if (!depositButton5) return;
-
-      depositButton5.addEventLister('click', function (e) {
-        let value = document.getElementById("astropay-efecty-deposit-amount");
-        console.log(value)
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Mi cuenta :: Recargas',
-          'action': 'astropay-efecty',
-          'label': 'Depósito',
-          'value': value
-        });
-      })
-      let depositButton6 = document.querySelectorAll(`#${id6} div button.xp-deposit-button`);
-      if (!depositButton6) return;
-
-      depositButton6.addEventLister('click', function (e) {
-        let value = document.getElementById("payu-efecty-deposit-amount");
-        console.log(value)
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Mi cuenta :: Recargas',
-          'action': 'payu-efecty',
-          'label': 'Depósito',
-          'value': value
-        });
-      })
-      let depositButton7 = document.querySelectorAll(`#${id7} div button.xp-deposit-button`);
-      if (!depositButton7) return;
-
-      depositButton7.addEventLister('click', function (e) {
-        let value = document.getElementById("astropay-baloto-deposit-amount");
-        console.log(value)
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Mi cuenta :: Recargas',
-          'action': 'astropay-baloto',
-          'label': 'Depósito',
-          'value': value
-        });
-      })
-      let depositButton8 = document.querySelectorAll(`#${id8} div button.xp-deposit-button`);
-      if (!depositButton8) return;
-
-      depositButton8.addEventLister('click', function (e) {
-        let value = document.getElementById("payu-baloto-deposit-amount");
-        console.log(value)
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Mi cuenta :: Recargas',
-          'action': 'payu-baloto',
-          'label': 'Depósito',
-          'value': value
-        });
-      })
-      let depositButton9 = document.querySelectorAll(`#${id9} div button.xp-deposit-button`);
-      if (!depositButton9) return;
-
-      depositButton9.addEventLister('click', function (e) {
-        let value = document.getElementById("astropay-puntored-deposit-amount");
-        console.log(value)
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Mi cuenta :: Recargas',
-          'action': 'astropay-puntored',
-          'label': 'Depósito',
-          'value': value
-        });
-      })
-
-    }
-    setRecarga();
-
-    function setRetiro() {
-      let retiro1 = document.getElementById("xp-withdraw-method-bonifico-bancario-co");
-      let retiro2 = document.getElementById("xp-withdraw-method-voucher");
-      let retiro3 = document.getElementById("xp-withdraw-method-voucher-efecty");
-      let retiro4 = document.getElementById("xp-withdraw-method-astropay-bonifico-bancario-co");
-
-      //retiro1.addEventListener('click', function (e) {
-      let withdrawButton1 = document.querySelectorAll("#xp-withdraw-method-bonifico-bancario-co div button.xp-confirm-button")[0];
-      if (!withdrawButton1) return;
-      withdrawButton1.addEventListener('click', function (e) {
-        let value = document.getElementById("bonifico-bancario-co-withdrawal-amount").value;
-        console.log(value)
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Mi cuenta :: Retiros',
-          'action': 'bonifico-bancario-co',
-          'label': 'Retirar dinero',
-          'value': value
-        });
-      })
-      //})
-      //retiro2.addEventListener('click', function (e) {
-      let withdrawButton2 = document.querySelectorAll("#xp-withdraw-method-voucher div button.xp-confirm-button")[0];
-      if (!withdrawButton2) return;
-      withdrawButton2.addEventListener('click', function (e) {
-        let value = document.getElementById("voucher-withdrawal-amount").value;
-        console.log(value)
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Mi cuenta :: Retiros',
-          'action': 'voucher',
-          'label': 'Retirar dinero',
-          'value': value
-        });
-      })
-      //})
-      //retiro3.addEventListener('click', function (e) {
-      let withdrawButton3 = document.querySelectorAll("#xp-withdraw-method-voucher-efecty div button.xp-confirm-button")[0];
-      if (!withdrawButton3) return;
-      withdrawButton3.addEventListener('click', function (e) {
-        let value = document.getElementById("voucher-efecty-withdrawal-amount").value;
-        console.log(value)
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Mi cuenta :: Retiros',
-          'action': 'voucher-efecty',
-          'label': 'Retirar dinero',
-          'value': value
-        });
-      })
-      //})
-      //retiro4.addEventListener('click', function (e) {
-      let withdrawButton4 = document.querySelectorAll("#xp-withdraw-method-astropay-bonifico-bancario-co div button.xp-confirm-button")[0];
-      if (!withdrawButton4) return;
-      withdrawButton4.addEventListener('click', function (e) {
-        let value = document.getElementById("astropay-bonifico-bancario-co-withdrawal-amount").value;
-        console.log(value)
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Mi cuenta :: Retiros',
-          'action': 'astropay-bonifico-bancario-co',
-          'label': 'Retirar dinero',
-          'value': value
-        });
-      })
-      //})
-
-    }
-    setRetiro();
-
-    /*HOME*/
-
-    function setTranversal() {
-      let login = document.querySelectorAll(".bottone.bottone-login")[0]
-      if (!login) return;
-      let registro = document.querySelectorAll(".bottone.bottone-login")[1]
-      if (!registro) return;
-      console.log(login)
-      console.log(registro)
-      login.addEventListener('click', function (e) {
-        let label = 'Login'
-        console.log(label);
-        dataLayer.push({ 'event': 'ga_event', 'category': 'Botones Login', 'action': 'Click​', 'label': label, 'value': '' });
-      })
-      registro.addEventListener('click', function (e) {
-        let label = 'Registro'
-        console.log(label)
-        dataLayer.push({ 'event': 'ga_event', 'category': 'Botones Login', 'action': 'Click​', 'label': label, 'value': '' });
-      })
-    }
-    setTranversal();
-
-    function setMenuPrincipal() {
-      let menuPrincipal = document.querySelectorAll(".menu-principale-barra .menu-principale li");
-      if (!menuPrincipal) return;
-      menuPrincipal.forEach(menu => {
-        menu.addEventListener('click', function (e) {
-          let menuText = menu.innerText;
-          console.log(menuText);
-          dataLayer.push({
-            'event': 'ga_event',
-            'category': 'Menú principal',
-            'action': 'Click',
-            'label': menuText,
-            'value': ''
-          });
-        })
-      });
-    }
-    setMenuPrincipal();
-
-    function setBanners() {
-      let bannerIzquierda = document.querySelector("#sidebar-sx .banner-widget-dx a img")
-      if (!bannerIzquierda) return;
-      let bannersCentro = document.querySelectorAll("#carosello-sport-1 div .carousel-item.pointer img")
-      if (!bannersCentro) return;
-      let bannerDerecha = document.querySelector("#sidebar-dx .banner-widget-dx a img")
-      if (!bannerDerecha) return;
-      let imgSrcIzq = bannerIzquierda.src;
-      let idIzq = imgSrcIzq;
-      let nameIzq = imgSrcIzq;
-      let creativeIzq = imgSrcIzq;
-      let promoObjIzq = {
-        id: idIzq,
-        name: nameIzq,
-        creative: creativeIzq
       }
-      dataLayer.push({
-        'event': 'ga_event',
-        'category': 'Apuestas :: Banners',
-        'action': 'Home-BannerIzquierda',
-        'label': imgSrcIzq,
-        'value': ''
-      });
-      bannerIzquierda.addEventListener('click', function (e) {
-        let imgSrc = e.target.src;
-        console.log(imgSrc);
-        dataLayer.push({
-          'event': 'promotionClick',
-          'ecommerce': {
-            'promoClick': {
-              'promotions': [
-                {
-                  'id': promoObjIzq.id,
-                  'name': promoObjIzq.name,
-                  'creative': promoObjIzq.creative,
-                  'position': "Home-BannerIzquierda"
-                },
-              ]
-            }
+    },
+    "menu_principal": {
+      "lugar": "home",
+      "evento": "click",
+      "selector": ".menu-principale-barra .menu-principale li"
+    },
+    "banners_home": {
+      "lugar": "home",
+      "izquierda": {
+        "selector": "#sidebar-sx .banner-widget-dx",
+        "evento": ["click", "impresion"],
+        "child": 0
+      },
+      "centro": {
+        "selector": "#carosello-sport-1",
+        "evento": "impresion",
+        "child": 0
+      },
+      "derecha": {
+        "selector": "#sidebar-dx .banner-widget-dx",
+        "evento": ["click", "impresion"],
+        "child": 0
+      }
+    },
+    "filtro_lateral_home": {
+      "lugar": "home",
+      "filtros_horarios": {
+        "selector": "#sidebar-sx .fasce-orarie maiuscolo span",
+        "evento": "click"
+      },
+      "filtros_diarios": {
+        "selector": "#sidebar-sx .filtro-settimana maiuscolo allinea-centro a",
+        "evento": "click"
+      },
+      "busqueda": {
+        "selector": "#sidebar-sx .widget-ricerca-side #match-search-input"
+      }
+    },
+    "deportes_home": {
+      "lugar": "home",
+      "destacados": {
+        "selector": "#sidebar-sx .widget-competizioni-side .contenitore-competizioni-sport .card.elemento-competizioni-widget",
+        "evento": "click",
+        "nombre": {
+          "selector": ".titolo-accordion a"
+        },
+        "item": {
+          "padre": {
+            "evento": "click",
+            "selector": "div .regione-widget div.elemento-competizioni-widget"
+          },
+          "hijo": {
+            "evento": "click",
+            "selector": "div .regione-widget div.competizione-sub div.elemento-competizioni-widget"
           }
-        });
+        }
+      }
+    },
+    "competencias_seleccion": {
+      "destacados": {
+        "evento": "click",
+        "selector": "#sidebar-sx .widget-competizioni-side .apri-partite-in-evidenza a"
+      }
+    },
+    "menu_casino": {
+      "lugar": "casino",
+      "evento": "click",
+      "selector": "#menuContainer div a"
+    },
+    "filtro_casino": {
+      "lugar": "casino",
+      "evento": "click",
+      "selector": ".filtri-casino div",
+      "plataforma": {
+        "evento": "click",
+        "selector": "#listaPiattaforme #piattaforme div"
+      },
+      "ordenar": {
+        "evento": "click",
+        "selector": "div div .sortFilter"
+      }
+    },
+    "juegos_casino": {
+      "lugar": "casino",
+      "evento": "click",
+      "selector": "#contentGames .blocco-mosaico.game ",
+      "nombre": {
+        "selector": "div p a"
+      },
+      "boton": {
+        "selector": "div p.bottone"
+      }
+    },
+    "articulos_promo": {
+      "lugar": "promo",
+      "evento": "click",
+      "selector": ".promo-landing.container div div.elenco-promo .card.elemento-promozioni-modale.filter"
+    },
+    "menu_promo": {
+      "lugar": "promo",
+      "evento": "click",
+      "selector": ".promo-landing.container div div.elenco-promo .card.elemento-promozioni-modale.filter"
+    },
 
+    "apuestas_home": {
+      "lugar": "home",
+      "evento": "click",
+      "selector": ".contenitoreRiga",
+      "deporte-pais-liga": {
+        "selector": ".nome-competizione-sport span"
+      },
+      "nombre-equipos": {
+        "selector": "div .tabellaQuoteSquadre"
+      },
+      "apuestas": {
+        "selector": "div .tabellaQuoteContenitoreQuotazioni .contenitoreSetQuotazioni div .contenitoreSingolaQuota",
+        "nombre": {
+          "selector": "div .tabellaQuoteContenitoreQuotazioni .contenitoreSetQuotazioni .tipologiaQuotazione_FormaCompatta"
+        }
+      }
+    },
+    "apuestas_borradas_home": {
+      "timeout": 2000,
+
+      "lugar": "home",
+      "evento": "click",
+      "parent": {
+        "selector": ".carrello-scrollable div div"
+      },
+      "selector": "div div div.grid-schedina-intestazione_container-bottoni button i",
+      "deporte-pais-liga": {
+        "selector": "div div div.grid-schedina-intestazione_contenitore-testo p"
+      },
+      "apuestas": {
+        "selector": "div div div div div.grid-schedina-body_quote-riga_descrizione-quota p"
+      }
+    },
+    "apuestas_botones_home": {
+      "timeout": 2000,
+
+      "lugar": "home",
+      "evento": "click",
+      "parent": {
+        "selector": ".carrello-fixed .bottoni-schedina"
+      },
+      "selector": ".bottone",
+      "comprar": {
+        "selector": ".bottone.bg-verde"
+      }
+    },
+
+    "apuestas_live": {
+      "lugar": "live",
+      "evento": "click",
+      "selector": ".contenitore-table",
+      "pais-liga": {
+        "selector": ".titolo-competizione-live span"
+      },
+      "deporte": {
+        "selector": ".titolo-blocco-sport span"
+      },
+      "nombre-equipos": {
+        "selector": "div div div .tabellaQuoteSquadre"
+      },
+      "apuestas": {
+        "selector": "div div div .tabellaQuoteContenitoreQuotazioni .contenitoreSetQuotazioni div .contenitoreSingolaQuota",
+        "nombre": {
+          "selector": "div div div .tabellaQuoteContenitoreQuotazioni .contenitoreSetQuotazioni .tipologiaQuotazione_FormaCompatta"
+        }
+      }
+    },
+    "apuestas_borradas_live": {
+      "timeout": 2000,
+
+      "lugar": "live",
+      "evento": "click",
+      "parent": {
+        "selector": ".carrello-scrollable div div"
+      },
+      "selector": "div div div.grid-schedina-intestazione_container-bottoni button i",
+      "deporte-pais-liga": {
+        "selector": "div div div.grid-schedina-intestazione_contenitore-testo p"
+      },
+      "apuestas": {
+        "selector": "div div div div div.grid-schedina-body_quote-riga_descrizione-quota p"
+      }
+    },
+    "apuestas_botones_live": {
+      "timeout": 2000,
+
+      "lugar": "live",
+      "evento": "click",
+      "parent": {
+        "selector": ".carrello-fixed .bottoni-schedina"
+      },
+      "selector": ".bottone",
+      "comprar": {
+        "selector": ".bottone.bg-verde"
+      }
+    },
+
+    "carrito_carreras": {
+      "lugar": "virtual",
+      "evento": "click",
+      "parent": {
+        "selector": "#place table.riepilogocoupon tbody tr.editing .commands.verdescuro",
+        "apuesta": {
+          "timeout": 2000,
+          "selector": "span.scommetti",
+          "child": 0
+        },
+        "apuesta_imprime": {
+          "selector": "span.print.scommetti"
+        },
+        "anula": {
+          "selector": "span.annulla"
+        }
+      },
+      "parent_confirm": {
+        "selector": "#place table.riepilogocoupon tbody tr .commands.verdescuro",
+        "apuesta_imprime": {
+          "selector": "span.postcoupon"
+        },
+        "anula": {
+          "selector": "span.unfreeze"
+        }
+      }
+    },
+    "apuestas_virtual_carreras": {
+      "lugar": "virtual",
+      "evento": "click",
+      "deporte": {
+        "selector": ".sportselectors div.btn.active"
+      },
+      "liga": {
+        "selector": ".listbox .listcontent .listitem choosed"
+      },
+      "apuesta_superior": {
+        "nombre_apuesta": {
+          "selector": "td.pari .triggersistiemi div.choose"
+        },
+        "nombre_equipo": {
+          "selector": "td.left.mn"
+        },
+        "eleccion_apuesta_ganador": {
+          "selector": "table.grigliacani tbody tr td.quota.Winner"
+        },
+        "eleccion_apuesta_posicion": {
+          "selector": "table.grigliacani tbody tr td.quota.Placed"
+        },
+        "eleccion_apuesta_colocado": {
+          "selector": "table.grigliacani tbody tr td.quota.Show"
+        },
+        "eleccion_apuesta_combinacion": {
+          "selector": "table.grigliacani tbody tr td.ss.tnx"
+        }
+      },
+      "apuesta_inferior": {
+        "nombre_apuesta": {
+          "selector": ".tree .linguette.attiva"
+        },
+        "nombre_equipo": {
+          "selector": "td.left.mn"
+        },
+        "eleccion_apuesta_exacta": {
+          "selector": "div.Exacta table tbody tr td.quota"
+        },
+        "eleccion_apuesta_quiniela": {
+          "selector": "div.Quinella table tbody tr td.quota"
+        },
+        "eleccion_apuesta_trifecta": {
+          "selector": "div.Trifecta table tbody tr td.quota"
+        },
+        "eleccion_apuesta_altro": {
+          "selector": "div.Altro table tbody tr td.quota"
+        }
+      }
+    },
+
+
+  }
+
+  /*HOME*/
+
+  function setTranversal() {
+    let login = document.querySelectorAll(".bottone.bottone-login")[0]
+    if (!login) return;
+    let registro = document.querySelectorAll(".bottone.bottone-login")[1]
+    if (!registro) return;
+    console.log(login)
+    console.log(registro)
+    login.addEventListener('click', function (e) {
+      let label = 'Login'
+      console.log(label);
+      dataLayer.push({ 'event': 'ga_event', 'category': 'Botones Login', 'action': 'Click​', 'label': label, 'value': '' });
+    })
+    registro.addEventListener('click', function (e) {
+      let label = 'Registro'
+      console.log(label)
+      dataLayer.push({ 'event': 'ga_event', 'category': 'Botones Login', 'action': 'Click​', 'label': label, 'value': '' });
+    })
+  }
+  setTranversal();
+
+  function setMenuPrincipal() {
+    let menuPrincipal = document.querySelectorAll(".menu-principale-barra .menu-principale li");
+    if (!menuPrincipal) return;
+    menuPrincipal.forEach(menu => {
+      menu.addEventListener('click', function (e) {
+        let menuText = menu.innerText;
+        console.log(menuText);
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Menú principal',
+          'action': 'Click',
+          'label': menuText,
+          'value': ''
+        });
       })
+    });
+  }
+  setMenuPrincipal();
+
+  function setBanners() {
+    let bannerIzquierda = document.querySelector("#sidebar-sx .banner-widget-dx a img")
+    if (!bannerIzquierda) return;
+    let bannersCentro = document.querySelectorAll("#carosello-sport-1 div .carousel-item.pointer img")
+    if (!bannersCentro) return;
+    let bannerDerecha = document.querySelector("#sidebar-dx .banner-widget-dx a img")
+    if (!bannerDerecha) return;
+    let imgSrcIzq = bannerIzquierda.src;
+    let idIzq = imgSrcIzq;
+    let nameIzq = imgSrcIzq;
+    let creativeIzq = imgSrcIzq;
+    let promoObjIzq = {
+      id: idIzq,
+      name: nameIzq,
+      creative: creativeIzq
+    }
+    dataLayer.push({
+      'event': 'ga_event',
+      'category': 'Apuestas :: Banners',
+      'action': 'Home-BannerIzquierda',
+      'label': imgSrcIzq,
+      'value': ''
+    });
+    bannerIzquierda.addEventListener('click', function (e) {
+      let imgSrc = e.target.src;
+      console.log(imgSrc);
       dataLayer.push({
-        'event': 'promoview',
+        'event': 'promotionClick',
         'ecommerce': {
-          'promoView': {
+          'promoClick': {
             'promotions': [
               {
                 'id': promoObjIzq.id,
@@ -869,50 +591,50 @@
           }
         }
       });
-      bannersCentro.forEach((banner, index) => {
 
-
-        let imgSrcCentro = banner.src;
-        let idCentro = imgSrcCentro;
-        let nameCentro = imgSrcCentro;
-        let creativeCentro = imgSrcCentro;
-        let promoObj = {
-          id: idCentro,
-          name: nameCentro,
-          creative: creativeCentro
+    })
+    dataLayer.push({
+      'event': 'promoview',
+      'ecommerce': {
+        'promoView': {
+          'promotions': [
+            {
+              'id': promoObjIzq.id,
+              'name': promoObjIzq.name,
+              'creative': promoObjIzq.creative,
+              'position': "Home-BannerIzquierda"
+            },
+          ]
         }
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Apuestas :: Banners',
-          'action': `Home-BannerMedio-${index}`,
-          'label': imgSrcCentro,
-          'value': ''
-        });
+      }
+    });
+    bannersCentro.forEach((banner, index) => {
 
-        banner.addEventListener('click', function (e) {
-          let imgSrc = e.target.src;
-          console.log(imgSrc);
-          dataLayer.push({
-            'event': 'promotionClick',
-            'ecommerce': {
-              'promoClick': {
-                'promotions': [
-                  {
-                    'id': promoObj.id,
-                    'name': promoObj.name,
-                    'creative': promoObj.creative,
-                    'position': `Home-BannerMedio-${index}`
-                  },
-                ]
-              }
-            }
-          });
 
-        });
+      let imgSrcCentro = banner.src;
+      let idCentro = imgSrcCentro;
+      let nameCentro = imgSrcCentro;
+      let creativeCentro = imgSrcCentro;
+      let promoObj = {
+        id: idCentro,
+        name: nameCentro,
+        creative: creativeCentro
+      }
+      dataLayer.push({
+        'event': 'ga_event',
+        'category': 'Apuestas :: Banners',
+        'action': `Home-BannerMedio-${index}`,
+        'label': imgSrcCentro,
+        'value': ''
+      });
+
+      banner.addEventListener('click', function (e) {
+        let imgSrc = e.target.src;
+        console.log(imgSrc);
         dataLayer.push({
-          'event': 'promoview',
+          'event': 'promotionClick',
           'ecommerce': {
-            'promoView': {
+            'promoClick': {
               'promotions': [
                 {
                   'id': promoObj.id,
@@ -924,26 +646,884 @@
             }
           }
         });
-      })
 
-      let imgSrcDer = bannerDerecha.src;
-      let idDer = imgSrcDer;
-      let nameDer = imgSrcDer;
-      let creativeDer = imgSrcDer;
-      let promoObjDer = {
-        id: idDer,
-        name: nameDer,
-        creative: creativeDer
+      });
+      dataLayer.push({
+        'event': 'promoview',
+        'ecommerce': {
+          'promoView': {
+            'promotions': [
+              {
+                'id': promoObj.id,
+                'name': promoObj.name,
+                'creative': promoObj.creative,
+                'position': `Home-BannerMedio-${index}`
+              },
+            ]
+          }
+        }
+      });
+    })
+
+    let imgSrcDer = bannerDerecha.src;
+    let idDer = imgSrcDer;
+    let nameDer = imgSrcDer;
+    let creativeDer = imgSrcDer;
+    let promoObjDer = {
+      id: idDer,
+      name: nameDer,
+      creative: creativeDer
+    }
+
+    dataLayer.push({
+      'event': 'ga_event',
+      'category': 'Apuestas :: Banners',
+      'action': 'Home-BannerDerecho',
+      'label': imgSrcDer,
+      'value': ''
+    });
+    bannerDerecha.addEventListener('click', function (e) {
+      let imgSrc = e.target.src;
+      console.log(imgSrc);
+      dataLayer.push({
+        'event': 'promotionClick',
+        'ecommerce': {
+          'promoClick': {
+            'promotions': [
+              {
+                'id': promoObjDer.id,
+                'name': promoObjDer.name,
+                'creative': promoObjDer.creative,
+                'position': "Home-BannerDerecho"
+              },
+            ]
+          }
+        }
+      });
+
+    })
+    dataLayer.push({
+      'event': 'promoview',
+      'ecommerce': {
+        'promoView': {
+          'promotions': [
+            {
+              'id': promoObj.id,
+              'name': promoObj.name,
+              'creative': promoObj.creative,
+              'position': "Home-BannerDerecho"
+            },
+          ]
+        }
       }
+    });
+  }
+  setBanners();
 
+  function setFiltroLateral() {
+    let filtrosHorarios = document.querySelectorAll("#sidebar-sx .fasce-orarie span");
+    if (!filtrosHorarios) return;
+    filtrosHorarios.forEach(element => {
+      let label = element.innerText;
+      console.log(label);
+
+      element.addEventListener('click', function (e) {
+        let label = e.target.innerText;
+        console.log(label);
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Apuestas :: Menú lateral',
+          'action': 'Click :: Filtro días',
+          'label': label,
+          'value': ''
+        });
+      });
+    });
+    let filtrosDiarios = document.querySelectorAll("#sidebar-sx .filtro-settimana a");
+    if (!filtrosDiarios) return;
+    filtrosDiarios.forEach(element => {
+      let label = element.innerText;
+      console.log(label);
+
+      element.addEventListener('click', function (e) {
+        let label = e.target.innerText;
+        console.log(label);
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Apuestas :: Menú lateral',
+          'action': 'Click :: Filtro días de la semana',
+          'label': label,
+          'value': ''
+        });
+      });
+    });
+    let busqueda = document.querySelector("#sidebar-sx .widget-ricerca-side #match-search-input");
+    if (!busqueda) return;
+    let label = element.value;
+    console.log(label);
+    busqueda.addEventListener('keyup', function (e) {
+      let label = e.target.value;
+      console.log(label);
       dataLayer.push({
         'event': 'ga_event',
-        'category': 'Apuestas :: Banners',
-        'action': 'Home-BannerDerecho',
-        'label': imgSrcDer,
+        'category': 'Apuestas :: Menú lateral',
+        'action': 'Click :: Buscador',
+        'label': label,
         'value': ''
       });
-      bannerDerecha.addEventListener('click', function (e) {
+    });
+  }
+  setFiltroLateral();
+
+  function setDeportesSeleccionados() {
+    let firstTime = true;
+    let deportes = document.querySelectorAll("#sidebar-sx .widget-competizioni-side .contenitore-competizioni-sport .card.elemento-competizioni-widget")
+    if (!deportes) return;
+    deportes.forEach((deporte, index) => {
+      if (index == 0) {
+        let destacadosItems = deporte.querySelectorAll("#filtro-in-evidenza-content .regione-widget")
+        destacadosItems.forEach(destacado => {
+          let nombre = destacado.querySelector(".elemento-competizioni-widget").innerText;
+          let destacadosList = destacado.querySelectorAll(".competizione-sub .elemento-competizioni-widget");
+          console.log(destacadosList);
+          destacadosList.forEach(item => {
+            let liga = item.innerText;
+            item.addEventListener('click', function (e) {
+              dataLayer.push({
+                'event': 'ga_event',
+                'category': 'Apuestas :: Menú lateral',
+                'action': 'Click :: Destacados',
+                'label': liga,
+                'value': ''
+              });
+              setTimeout(() => {
+                setApuestasHome();
+              }, 2000);
+            })
+          });
+        });
+      } else {
+        console.log(deporte);
+        let nombre = deporte.querySelector(".titolo-accordion").innerText;
+        let deportesRegions = deporte.querySelectorAll("div .regione-widget");
+        deportesRegions.forEach(region => {
+
+          let pais = region.querySelector(".elemento-competizioni-widget").innerText;
+          let items = region.querySelectorAll(".competizione-sub a div")
+          items.forEach(item => {
+
+            let liga = item.innerText;
+            item.addEventListener('click', function (e) {
+              dataLayer.push({
+                'event': 'ga_event',
+                'category': 'Apuestas :: Menú lateral',
+                'action': `Deportes :: ${nombre}`,
+                'label': `${pais} :: ${liga}`,
+                'value': ''
+              });
+              setTimeout(() => {
+
+                setApuestasHome();
+              }, 2000);
+            })
+          });
+        });
+      }
+
+    });
+    firstTime = false;
+  }
+  setDeportesSeleccionados();
+
+  function setCompetenciasSeleccionadas() {
+    let competencias = document.querySelectorAll('#sidebar-sx .widget-competizioni-side .apri-partite-in-evidenza a')
+    if (!competencias) return;
+    competencias.forEach(competencia => {
+      let nombre = competencia.innerText
+      competencia.addEventListener('click', function (e) {
+        dataLayer.push(
+          {
+            'event': 'ga_event',
+            'category': 'Apuestas :: Menú lateral',
+            'action': 'Click',
+            'label': nombre,
+            'value': ''
+          });
+      })
+    });
+  }
+  setCompetenciasSeleccionadas();
+
+
+  function setItemsTabla(box) {
+    let itemsTabla = box.querySelectorAll(".tab-content div div div div div")
+    itemsTabla.forEach(item => {
+      let apuestaTabla = item.innerText;
+      console.log(item)
+      console.log(item.onclick)
+      item.addEventListener('click', function (e) {
+        console.log(apuestaTabla);
+
+      })
+    });
+
+  }
+  function setApuestasHome() {
+    let boxs = document.querySelectorAll('.competizione-sport')
+    if (!boxs) return
+    console.log(boxs)
+    boxs.forEach(box => {
+      let nombres = box.querySelector(".titolo-blocco-sport .nome-competizione-sport .grassetto").innerText.split("-")
+      let deporte = nombres[0];
+      let pais = nombres[1];
+      let boxLiga = nombres[nombres.length - 1].split(" (")[0]
+
+      let apuestasPartidos = box.querySelectorAll(".contenitoreRiga");
+      apuestasPartidos.forEach(apuestaPartido => {
+
+        let partidos = apuestaPartido.querySelectorAll(".tabellaQuoteSquadre")
+        let equipos = "";
+        partidos.forEach(partido => {
+          equipos = partido.querySelectorAll("p")
+          equipos = [...equipos].map(equipo => {
+            return equipo.innerText
+          })
+          equipos = equipos.join(" ");
+        });
+
+        let action = `${nombres[0]} :: ${nombres[nombres.length - 1]}`
+        console.log(action);
+        let apuestas = apuestaPartido.querySelectorAll(".tabellaQuoteContenitoreQuotazioni .contenitoreSetQuotazioni")
+        apuestas.forEach(apuesta => {
+          let nombreApuesta = apuesta.querySelector(".tipologiaQuotazione_FormaCompatta").innerText;
+          let eleccionesApuestas = apuesta.querySelectorAll("div .contenitoreSingolaQuota")
+          eleccionesApuestas.forEach(eleccionApuesta => {
+            eleccionApuesta.addEventListener('click', function (e) {
+              let eleccionInfo = eleccionApuesta.querySelectorAll("p")
+              eleccionInfo = [...eleccionInfo].map(item => {
+                return item.innerText
+              })
+              eleccionInfo = eleccionInfo.join(" ");
+
+              let data = {
+                nombreApuesta,
+                deporte,
+                boxLiga,
+                equipos,
+                eleccionInfo,
+                action
+              }
+
+              let apuesta = {
+                'name': deporte,
+                'id': boxLiga,
+                'price': "",
+                'brand': pais,
+                'category': "Home",
+                'variant': "Principal",
+                'quantity': 1,
+                'dimension1': nombreApuesta,
+                'dimension2': eleccionApuesta,
+                'dimension3': equipos
+              }
+              console.log(data)
+              dataLayer.push({
+                'event': 'ga_event',
+                'category': 'Agregar al Carrito',
+                'action': `${deporte} :: ${boxLiga}`,
+                'label': `${nombreApuesta} :: ${eleccionInfo}`,
+                'value': ''
+              });
+              dataLayer.push({
+                'event': 'addToCart',
+                'ecommerce': {
+                  'currencyCode': 'COP',
+                  'add': {
+                    'actionField': {
+                      'list': "Home"
+                    },
+                    'products': [apuesta]
+                  }
+                }
+              });
+              setTimeout(() => {
+                setApuestasBorradasHome()
+                setApuestasBotonesHome()
+              }, 2000);
+            })
+
+          });
+        });
+      });
+      //setItemsTabla(box)
+
+    });
+  }
+  setApuestasHome();
+  function setApuestasBorradasHome() {
+    let carrito = document.querySelector(".carrello-scrollable");
+    if (!carrito) return
+    let productos = document.querySelectorAll(".grid-schedina.grid-schedina-mobile.grid-schedina-multipla");
+    productos.forEach(producto => {
+      let papelera = producto.querySelector(".grid-schedina-intestazione button i");
+      papelera.addEventListener("click", function (e) {
+        let [deporte, liga] = producto.querySelector(".grid-schedina-intestazione_contenitore-testo p").innerText.split("-");
+        let pais = "";
+        let cuerpo = producto.querySelector(".grid-schedina-body")
+        let equipos = [...cuerpo.querySelectorAll(".grid-schedina-body_evento div")].map(texto => {
+          return texto.innerText
+        }).join(" ");
+        let apuestas = [...cuerpo.querySelectorAll(".grid-schedina-body_quote-riga")].map(texto => {
+          let descripcion = texto.querySelector(".grid-schedina-body_quote-riga_descrizione-quota")
+          let valor = texto.querySelector(".grid-schedina-body_quote-riga_valore-quota")
+          let apuesta = {
+            nombre: descripcion.innerText.split(":")[0],
+            eleccion: descripcion.innerText.split(":")[1],
+            valor: valor.innerText
+          }
+          return apuesta
+        });
+
+        let nombreApuesta = ""
+        let eleccionApuesta = ""
+        let valorApuesta = ""
+        apuestas.forEach(apuesta => {
+          nombreApuesta = `${nombreApuesta}${apuesta.nombre}`
+          eleccionApuesta = `${eleccionApuesta}${apuesta.eleccion}`
+          valorApuesta = `${valorApuesta}${apuesta.valor}`
+        });
+
+        let apuesta = {
+          'name': deporte,
+          'id': liga,
+          'price': valorApuesta,
+          'brand': pais,
+          'category': "Home",
+          'variant': "Principal",
+          'quantity': 1,
+          'dimension1': nombreApuesta,
+          'dimension2': eleccionApuesta,
+          'dimension3': equipos
+        }
+        console.log(apuesta)
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Quitar del Carrito',
+          'action': `${deporte} :: ${liga}`,
+          'label': `${nombreApuesta} :: ${eleccionApuesta}`,
+          'value': ''
+        });
+        dataLayer.push({
+          'event': 'removeFromCart',
+          'ecommerce': {
+            'currencyCode': 'COP',
+            'remove': {
+              'products': [apuesta]
+            }
+          }
+        });
+      })
+    });
+  }
+  function setApuestasBotonesHome() {
+
+    let carrito = document.querySelector(".carrello-fixed");
+    if (!carrito) return
+
+    let botones = carrito.querySelectorAll(".bottoni-schedina .bottone")
+    let botonComprar = carrito.querySelector(".bottoni-schedina .bottone.bg-verde")
+    botones.forEach(boton => {
+      boton.addEventListener('click', function (e) {
+
+        let productos = document.querySelectorAll(".grid-schedina.grid-schedina-mobile.grid-schedina-multipla");
+        let nombresApuestas = [];
+        let eleccionesApuestas = [];
+        let valoresApuestas = [];
+        let deportes = [];
+        let ligas = [];
+        let paises = []
+        let partidos = []
+        productos.forEach(producto => {
+          let [deporte, liga] = producto.querySelector(".grid-schedina-intestazione_contenitore-testo p").innerText.split("-");
+          let pais = "";
+          let cuerpo = producto.querySelector(".grid-schedina-body")
+          let equipos = [...cuerpo.querySelectorAll(".grid-schedina-body_evento div")].map(texto => {
+            return texto.innerText
+          }).join(" ");
+          let apuestas = [...cuerpo.querySelectorAll(".grid-schedina-body_quote-riga")].map(texto => {
+            let descripcion = texto.querySelector(".grid-schedina-body_quote-riga_descrizione-quota")
+            let valor = texto.querySelector(".grid-schedina-body_quote-riga_valore-quota")
+            let apuesta = {
+              nombre: descripcion.innerText.split(":")[0],
+              eleccion: descripcion.innerText.split(":")[1],
+              valor: valor.innerText
+            }
+            return apuesta
+          });
+
+          let nombreApuesta = ""
+          let eleccionApuesta = ""
+          let valorApuesta = ""
+          apuestas.forEach(apuesta => {
+            nombreApuesta = `${nombreApuesta}${apuesta.nombre}`
+            eleccionApuesta = `${eleccionApuesta}${apuesta.eleccion}`
+            valorApuesta = `${valorApuesta}${apuesta.valor}`
+          });
+          nombresApuestas.push(nombreApuesta);
+          eleccionesApuestas.push(eleccionApuesta);
+          valoresApuestas.push(valorApuesta);
+          deportes.push(deporte);
+          ligas.push(liga);
+          paises.push(pais);
+          partidos.push(equipo)
+        });
+        let data = {
+          name: deportes,
+          id: ligas,
+          price: valoresApuestas,
+          brand: paises,
+          category: "Home",
+          quantity: 1,
+          dimension1: nombresApuestas,
+          dimension2: eleccionesApuestas,
+          dimension3: partidos
+        }
+        console.log(data)
+
+        let label = boton.innerText;
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': `Comprar :: ${label}`,
+          'action': `${data.deporte} :: ${data.liga}`,
+          'label': `${data.dimension1} :: ${data.dimension2}`,
+          'value': `${data.price}`
+        });
+        if (label.toUpperCase() == "COMPRAR") {
+          setTimeout(() => {
+            setApuestasCompraHome(data);
+          }, 1000);
+        }
+      })
+    });
+  }
+  function setApuestasCompraHome(data) {
+    let carrito = document.querySelector(".carrello-fixed");
+    if (!carrito) return
+    let monto = carrito.querySelector("div .valore-importo-totale-carrello").innerText.split(" ")[0];
+    let botones = carrito.querySelectorAll(".bottoni-schedina .bottone")
+    let botonConfirmar = carrito.querySelector(".bottoni-schedina .bottone.bg-blu")
+    dataLayer.push({
+      'event': 'checkout',
+      'ecommerce': {
+        'checkout': {
+          'actionField': {
+            'step': "Comprar"
+          },
+          'products': [data]
+        }
+      }
+    });
+    botonConfirmar.addEventListener('click', function (e) {
+      let time = Date.now();
+      let loginSession = localStorage.getItem("loginMessageSession");
+      let orderID = `${loginSession} :: time`;
+      dataLayer.push({
+        'event': 'transaction',
+        'ecommerce': {
+          'purchase': {
+            'actionField': {
+              'id': orderID,
+              'affiliation': "Aquijuego",
+              'revenue': monto,
+            },
+            'products': [data]
+          }
+        }
+      });
+    })
+
+  }
+
+  /*EN VIVO*/
+
+  function setApuestasLive() {
+    let boxs = document.querySelectorAll('.contenitore-table')
+    if (!boxs) return;
+    console.log(boxs)
+    boxs.forEach(box => {
+      let nombres = box.querySelector(".titolo-competizione-live span").innerText.split("-")
+      let deporte = nombres[0];
+      let pais = nombres[1];
+      let boxLiga = nombres[nombres.length - 1].split(" (")[0]
+
+      let apuestasPartidos = box.querySelectorAll(".tabellaQuoteNew");
+      apuestasPartidos.forEach(apuestaPartido => {
+
+        let partidos = apuestaPartido.querySelectorAll(".tabellaQuoteSquadre")
+        let equipos = "";
+        partidos.forEach(partido => {
+          equipos = partido.querySelectorAll("p")
+          equipos = [...equipos].map(equipo => {
+            return equipo.innerText
+          })
+          equipos = equipos.join(" ");
+        });
+
+        let action = `${nombres[0]} :: ${nombres[nombres.length - 1]}`
+        console.log(action);
+        let apuestas = apuestaPartido.querySelectorAll(".tabellaQuoteContenitoreQuotazioni .contenitoreSetQuotazioni")
+        apuestas.forEach(apuesta => {
+          let nombreApuesta = apuesta.querySelector(".tipologiaQuotazione_FormaCompatta").innerText;
+          let eleccionesApuestas = apuesta.querySelectorAll("div .contenitoreSingolaQuota")
+          eleccionesApuestas.forEach(eleccionApuesta => {
+            eleccionApuesta.addEventListener('click', function (e) {
+              let eleccionInfo = eleccionApuesta.querySelectorAll("p")
+              eleccionInfo = [...eleccionInfo].map(item => {
+                return item.innerText
+              })
+              eleccionInfo = eleccionInfo.join(" ");
+
+              let data = {
+                nombreApuesta,
+                deporte,
+                boxLiga,
+                equipos,
+                eleccionInfo,
+                action
+              }
+
+              let apuesta = {
+                'name': deporte,
+                'id': boxLiga,
+                'price': "",
+                'brand': pais,
+                'category': "En Vivo",
+                'variant': "Principal",
+                'quantity': 1,
+                'dimension1': nombreApuesta,
+                'dimension2': eleccionApuesta,
+                'dimension3': equipos
+              }
+              console.log(data)
+              dataLayer.push({
+                'event': 'ga_event',
+                'category': 'Agregar al Carrito',
+                'action': `${deporte} :: ${boxLiga}`,
+                'label': `${nombreApuesta} :: ${eleccionInfo}`,
+                'value': ''
+              });
+              dataLayer.push({
+                'event': 'addToCart',
+                'ecommerce': {
+                  'currencyCode': 'COP',
+                  'add': {
+                    'actionField': {
+                      'list': "En Vivo"
+                    },
+                    'products': [apuesta]
+                  }
+                }
+              });
+              setTimeout(() => {
+                setApuestasBorradasLive()
+                setApuestasBotonesLive()
+              }, 2000);
+            })
+
+          });
+        });
+      });
+      //setItemsTabla(box)
+
+    });
+  }
+  function setApuestasBorradasLive() {
+    let carrito = document.querySelector(".carrello-scrollable");
+    if (!carrito) return
+    let productos = document.querySelectorAll(".grid-schedina.grid-schedina-mobile.grid-schedina-multipla");
+    productos.forEach(producto => {
+      let papelera = producto.querySelector(".grid-schedina-intestazione button i");
+      papelera.addEventListener("click", function (e) {
+        console.log("Borrando...")
+        let [deporte, liga] = producto.querySelector(".grid-schedina-intestazione_contenitore-testo p").innerText.split("-");
+        let pais = "";
+        let cuerpo = producto.querySelector(".grid-schedina-body")
+        let equipos = [...cuerpo.querySelectorAll(".grid-schedina-body_evento div")].map(texto => {
+          return texto.innerText
+        }).join(" ");
+        let apuestas = [...cuerpo.querySelectorAll(".grid-schedina-body_quote-riga")].map(texto => {
+          let descripcion = texto.querySelector(".grid-schedina-body_quote-riga_descrizione-quota")
+          let valor = texto.querySelector(".grid-schedina-body_quote-riga_valore-quota")
+          let apuesta = {
+            nombre: descripcion.innerText.split(":")[0],
+            eleccion: descripcion.innerText.split(":")[1],
+            valor: valor.innerText
+          }
+          return apuesta
+        });
+
+        let nombreApuesta = ""
+        let eleccionApuesta = ""
+        let valorApuesta = ""
+        apuestas.forEach(apuesta => {
+          nombreApuesta = `${nombreApuesta}${apuesta.nombre}`
+          eleccionApuesta = `${eleccionApuesta}${apuesta.eleccion}`
+          valorApuesta = `${valorApuesta}${apuesta.valor}`
+        });
+
+        let apuesta = {
+          'name': deporte,
+          'id': liga,
+          'price': valorApuesta,
+          'brand': pais,
+          'category': "En Vivo",
+          'variant': "Principal",
+          'quantity': 1,
+          'dimension1': nombreApuesta,
+          'dimension2': eleccionApuesta,
+          'dimension3': equipos
+        }
+        console.log(apuesta)
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Quitar del Carrito',
+          'action': `${deporte} :: ${liga}`,
+          'label': `${nombreApuesta} :: ${eleccionApuesta}`,
+          'value': ''
+        });
+        dataLayer.push({
+          'event': 'removeFromCart',
+          'ecommerce': {
+            'currencyCode': 'COP',
+            'remove': {
+              'products': [apuesta]
+            }
+          }
+        });
+      })
+    });
+  }
+  function setApuestasBotonesLive() {
+
+    let carrito = document.querySelector(".carrello-fixed");
+    if (!carrito) return
+
+    let botones = carrito.querySelectorAll(".bottoni-schedina .bottone")
+    let botonComprar = carrito.querySelector(".bottoni-schedina .bottone.bg-verde")
+    botones.forEach(boton => {
+      boton.addEventListener('click', function (e) {
+
+        let productos = document.querySelectorAll(".grid-schedina.grid-schedina-mobile.grid-schedina-multipla");
+        let nombresApuestas = [];
+        let eleccionesApuestas = [];
+        let valoresApuestas = [];
+        let deportes = [];
+        let ligas = [];
+        let paises = []
+        let partidos = []
+        productos.forEach(producto => {
+          let [deporte, liga] = producto.querySelector(".grid-schedina-intestazione_contenitore-testo p").innerText.split("-");
+          let pais = "";
+          let cuerpo = producto.querySelector(".grid-schedina-body")
+          let equipos = [...cuerpo.querySelectorAll(".grid-schedina-body_evento div")].map(texto => {
+            return texto.innerText
+          }).join(" ");
+          let apuestas = [...cuerpo.querySelectorAll(".grid-schedina-body_quote-riga")].map(texto => {
+            let descripcion = texto.querySelector(".grid-schedina-body_quote-riga_descrizione-quota")
+            let valor = texto.querySelector(".grid-schedina-body_quote-riga_valore-quota")
+            let apuesta = {
+              nombre: descripcion.innerText.split(":")[0],
+              eleccion: descripcion.innerText.split(":")[1],
+              valor: valor.innerText
+            }
+            return apuesta
+          });
+
+          let nombreApuesta = ""
+          let eleccionApuesta = ""
+          let valorApuesta = ""
+          apuestas.forEach(apuesta => {
+            nombreApuesta = `${nombreApuesta}${apuesta.nombre}`
+            eleccionApuesta = `${eleccionApuesta}${apuesta.eleccion}`
+            valorApuesta = `${valorApuesta}${apuesta.valor}`
+          });
+          nombresApuestas.push(nombreApuesta);
+          eleccionesApuestas.push(eleccionApuesta);
+          valoresApuestas.push(valorApuesta);
+          deportes.push(deporte);
+          ligas.push(liga);
+          paises.push(pais);
+          partidos.push(equipo)
+        });
+        let data = {
+          name: deportes,
+          id: ligas,
+          price: valoresApuestas,
+          brand: paises,
+          category: "En Vivo",
+          quantity: 1,
+          dimension1: nombresApuestas,
+          dimension2: eleccionesApuestas,
+          dimension3: partidos
+        }
+        console.log(data)
+
+        let label = boton.innerText;
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': `Comprar :: ${label}`,
+          'action': `${data.deporte} :: ${data.liga}`,
+          'label': `${data.dimension1} :: ${data.dimension2}`,
+          'value': `${data.price}`
+        });
+        if (label.toUpperCase() == "COMPRAR") {
+          setTimeout(() => {
+            setApuestasCompraLive(data);
+          }, 1000);
+        }
+      })
+    });
+  }
+  function setApuestasCompraLive(data) {
+    console.log("En compra")
+    let carrito = document.querySelector(".carrello-fixed");
+    if (!carrito) return
+    let monto = carrito.querySelector("div .valore-importo-totale-carrello").innerText.split(" ")[0];
+    let botones = carrito.querySelectorAll(".bottoni-schedina .bottone")
+    let botonConfirmar = carrito.querySelector(".bottoni-schedina .bottone.bg-blu")
+    dataLayer.push({
+      'event': 'checkout',
+      'ecommerce': {
+        'checkout': {
+          'actionField': {
+            'step': "Comprar"
+          },
+          'products': [data]
+        }
+      }
+    });
+    botonConfirmar.addEventListener('click', function (e) {
+      let time = Date.now();
+      let loginSession = localStorage.getItem("loginMessageSession");
+      let orderID = `${loginSession} :: time`;
+      dataLayer.push({
+        'event': 'transaction',
+        'ecommerce': {
+          'purchase': {
+            'actionField': {
+              'id': orderID,
+              'affiliation': "Aquijuego",
+              'revenue': monto,
+            },
+            'products': [data]
+          }
+        }
+      });
+    })
+
+  }
+  setApuestasLive();
+  setApuestasBorradasLive()
+  setApuestasBotonesLive()
+  /*VIRTUAL*/
+
+  /*CASINO*/
+
+  function setMenuCasino() {
+    let items = document.querySelectorAll("#menuContainer div a");
+    if (!items) return;
+    items.forEach(item => {
+      let label = item.innerText;
+      item.addEventListener('click', function (e) {
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Casino :: Menú',
+          'action': 'Click',
+          'label': label,
+          'value': ''
+        });
+      })
+    });
+  }
+  setMenuCasino();
+
+  function setFiltroCasino() {
+    let filtroPlataforma = document.querySelectorAll(".filtri-casino div #listaPiattaforme #piattaforme div")
+    if (!filtroPlataforma) return;
+    filtroPlataforma.forEach(item => {
+      let label = item.innerText
+      item.addEventListener('click', function (e) {
+        console.log(label)
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Casino :: Filtro Plataforma',
+          'action': 'Click',
+          'label': label,
+          'value': ''
+        });
+      })
+    });
+    let filtroOrdenar = document.querySelectorAll(".filtri-casino div div div .sortFilter")
+    if (!filtroOrdenar) return;
+    filtroOrdenar.forEach(item => {
+      let label = item.innerText
+      item.addEventListener('click', function (e) {
+        console.log(label)
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Casino :: Filtro Ordenar',
+          'action': 'Click',
+          'label': label,
+          'value': ''
+        });
+      })
+    });
+  }
+  setFiltroCasino();
+
+  function setJuegosCasino() {
+    let juegos = document.querySelectorAll("#contentGames .blocco-mosaico.game");
+    if (!juegos) return;
+    juegos.forEach(juego => {
+      let nombre = juego.querySelector('div p a').innerText
+      let botones = juego.querySelectorAll('div p.bottone');
+      botones.forEach(boton => {
+        let nombreBoton = boton.innerText
+        boton.addEventListener('click', function (e) {
+          dataLayer.push({
+            'event': 'ga_event',
+            'category': 'Casino :: Juegos',
+            'action': `Click:: ${nombreBoton}`,
+            'label': `${nombre}`,
+            'value': ''
+          });
+        })
+      });
+    });
+  }
+  setJuegosCasino();
+
+  function setBannerCasino() {
+    let banners = document.querySelectorAll(".banner-casino div div div .carousel-item img");
+    if (!banners) return;
+    banners.forEach((banner, index) => {
+      let imgSrc = banner.src;
+      let id = imgSrc;
+      let name = imgSrc;
+      let creative = imgSrc;
+      let promoObj = {
+        id,
+        name,
+        creative
+      }
+      dataLayer.push({
+        'event': 'ga_event',
+        'category': 'Casino :: Banner',
+        'action': 'Casino-Banner',
+        'label': imgSrc,
+        'value': ''
+      });
+      banner.addEventListener('click', function (e) {
         let imgSrc = e.target.src;
         console.log(imgSrc);
         dataLayer.push({
@@ -952,10 +1532,10 @@
             'promoClick': {
               'promotions': [
                 {
-                  'id': promoObjDer.id,
-                  'name': promoObjDer.name,
-                  'creative': promoObjDer.creative,
-                  'position': "Home-BannerDerecho"
+                  'id': promoObj.id,
+                  'name': promoObj.name,
+                  'creative': promoObj.creative,
+                  'position': `Casino - Banner - ${index}`
                 },
               ]
             }
@@ -972,895 +1552,54 @@
                 'id': promoObj.id,
                 'name': promoObj.name,
                 'creative': promoObj.creative,
-                'position': "Home-BannerDerecho"
+                'position': `Casino - Banner - ${index}`
               },
             ]
           }
         }
       });
-    }
-    setBanners();
 
-    function setFiltroLateral() {
-      let filtrosHorarios = document.querySelectorAll("#sidebar-sx .fasce-orarie span");
-      if (!filtrosHorarios) return;
-      filtrosHorarios.forEach(element => {
-        let label = element.innerText;
-        console.log(label);
+    });
+  }
+  setBannerCasino();
 
-        element.addEventListener('click', function (e) {
-          let label = e.target.innerText;
-          console.log(label);
-          dataLayer.push({
-            'event': 'ga_event',
-            'category': 'Apuestas :: Menú lateral',
-            'action': 'Click :: Filtro días',
-            'label': label,
-            'value': ''
-          });
-        });
-      });
-      let filtrosDiarios = document.querySelectorAll("#sidebar-sx .filtro-settimana a");
-      if (!filtrosDiarios) return;
-      filtrosDiarios.forEach(element => {
-        let label = element.innerText;
-        console.log(label);
+  /*PROMO*/
 
-        element.addEventListener('click', function (e) {
-          let label = e.target.innerText;
-          console.log(label);
-          dataLayer.push({
-            'event': 'ga_event',
-            'category': 'Apuestas :: Menú lateral',
-            'action': 'Click :: Filtro días de la semana',
-            'label': label,
-            'value': ''
-          });
-        });
-      });
-      let busqueda = document.querySelector("#sidebar-sx .widget-ricerca-side #match-search-input");
-      if (!busqueda) return;
-      let label = element.value;
-      console.log(label);
-      busqueda.addEventListener('keyup', function (e) {
-        let label = e.target.value;
-        console.log(label);
+  function setArticulosPromo() {
+    let items = document.querySelectorAll(".promo-landing.container div div.elenco-promo .card.elemento-promozioni-modale.filter");
+    if (!items) return
+    items.forEach(item => {
+      let nombre = item.querySelector("div h5").innerText;
+      item.addEventListener('click', function (e) {
+        console.log(nombre);
         dataLayer.push({
           'event': 'ga_event',
-          'category': 'Apuestas :: Menú lateral',
-          'action': 'Click :: Buscador',
-          'label': label,
+          'category': 'Promo :: Artículos',
+          'action': 'Click',
+          'label': nombre,
           'value': ''
         });
       });
-    }
-    setFiltroLateral();
+    });
+  }
+  setArticulosPromo();
 
-    function setDeportesSeleccionados() {
-      let firstTime = true;
-      let deportes = document.querySelectorAll("#sidebar-sx .widget-competizioni-side .contenitore-competizioni-sport .card.elemento-competizioni-widget")
-      if (!deportes) return;
-      deportes.forEach((deporte, index) => {
-        if (index == 0) {
-          let destacadosItems = deporte.querySelectorAll("#filtro-in-evidenza-content .regione-widget")
-          destacadosItems.forEach(destacado => {
-            let nombre = destacado.querySelector(".elemento-competizioni-widget").innerText;
-            let destacadosList = destacado.querySelectorAll(".competizione-sub .elemento-competizioni-widget");
-            console.log(destacadosList);
-            destacadosList.forEach(item => {
-              let liga = item.innerText;
-              item.addEventListener('click', function (e) {
-                dataLayer.push({
-                  'event': 'ga_event',
-                  'category': 'Apuestas :: Menú lateral',
-                  'action': 'Click :: Destacados',
-                  'label': liga,
-                  'value': ''
-                });
-                setTimeout(() => {
-                  setApuestasHome();
-                }, 2000);
-              })
-            });
-          });
-        } else {
-          console.log(deporte);
-          let nombre = deporte.querySelector(".titolo-accordion").innerText;
-          let deportesRegions = deporte.querySelectorAll("div .regione-widget");
-          deportesRegions.forEach(region => {
-
-            let pais = region.querySelector(".elemento-competizioni-widget").innerText;
-            let items = region.querySelectorAll(".competizione-sub a div")
-            items.forEach(item => {
-
-              let liga = item.innerText;
-              item.addEventListener('click', function (e) {
-                dataLayer.push({
-                  'event': 'ga_event',
-                  'category': 'Apuestas :: Menú lateral',
-                  'action': `Deportes :: ${nombre}`,
-                  'label': `${pais} :: ${liga}`,
-                  'value': ''
-                });
-                setTimeout(() => {
-
-                  setApuestasHome();
-                }, 2000);
-              })
-            });
-          });
-        }
-
-      });
-      firstTime = false;
-    }
-    setDeportesSeleccionados();
-
-    function setCompetenciasSeleccionadas() {
-      let competencias = document.querySelectorAll('#sidebar-sx .widget-competizioni-side .apri-partite-in-evidenza a')
-      if (!competencias) return;
-      competencias.forEach(competencia => {
-        let nombre = competencia.innerText
-        competencia.addEventListener('click', function (e) {
-          dataLayer.push(
-            {
-              'event': 'ga_event',
-              'category': 'Apuestas :: Menú lateral',
-              'action': 'Click',
-              'label': nombre,
-              'value': ''
-            });
-        })
-      });
-    }
-    setCompetenciasSeleccionadas();
-
-
-    function setItemsTabla(box) {
-      let itemsTabla = box.querySelectorAll(".tab-content div div div div div")
-      itemsTabla.forEach(item => {
-        let apuestaTabla = item.innerText;
-        console.log(item)
-        console.log(item.onclick)
-        item.addEventListener('click', function (e) {
-          console.log(apuestaTabla);
-
-        })
-      });
-
-    }
-    function setApuestasHome() {
-      let boxs = document.querySelectorAll('.competizione-sport')
-      if (!boxs) return
-      console.log(boxs)
-      boxs.forEach(box => {
-        let nombres = box.querySelector(".titolo-blocco-sport .nome-competizione-sport .grassetto").innerText.split("-")
-        let deporte = nombres[0];
-        let pais = nombres[1];
-        let boxLiga = nombres[nombres.length - 1].split(" (")[0]
-
-        let apuestasPartidos = box.querySelectorAll(".contenitoreRiga");
-        apuestasPartidos.forEach(apuestaPartido => {
-
-          let partidos = apuestaPartido.querySelectorAll(".tabellaQuoteSquadre")
-          let equipos = "";
-          partidos.forEach(partido => {
-            equipos = partido.querySelectorAll("p")
-            equipos = [...equipos].map(equipo => {
-              return equipo.innerText
-            })
-            equipos = equipos.join(" ");
-          });
-
-          let action = `${nombres[0]} :: ${nombres[nombres.length - 1]}`
-          console.log(action);
-          let apuestas = apuestaPartido.querySelectorAll(".tabellaQuoteContenitoreQuotazioni .contenitoreSetQuotazioni")
-          apuestas.forEach(apuesta => {
-            let nombreApuesta = apuesta.querySelector(".tipologiaQuotazione_FormaCompatta").innerText;
-            let eleccionesApuestas = apuesta.querySelectorAll("div .contenitoreSingolaQuota")
-            eleccionesApuestas.forEach(eleccionApuesta => {
-              eleccionApuesta.addEventListener('click', function (e) {
-                let eleccionInfo = eleccionApuesta.querySelectorAll("p")
-                eleccionInfo = [...eleccionInfo].map(item => {
-                  return item.innerText
-                })
-                eleccionInfo = eleccionInfo.join(" ");
-
-                let data = {
-                  nombreApuesta,
-                  deporte,
-                  boxLiga,
-                  equipos,
-                  eleccionInfo,
-                  action
-                }
-
-                let apuesta = {
-                  'name': deporte,
-                  'id': boxLiga,
-                  'price': "",
-                  'brand': pais,
-                  'category': "Home",
-                  'variant': "Principal",
-                  'quantity': 1,
-                  'dimension1': nombreApuesta,
-                  'dimension2': eleccionApuesta,
-                  'dimension3': equipos
-                }
-                console.log(data)
-                dataLayer.push({
-                  'event': 'ga_event',
-                  'category': 'Agregar al Carrito',
-                  'action': `${deporte} :: ${boxLiga}`,
-                  'label': `${nombreApuesta} :: ${eleccionInfo}`,
-                  'value': ''
-                });
-                dataLayer.push({
-                  'event': 'addToCart',
-                  'ecommerce': {
-                    'currencyCode': 'COP',
-                    'add': {
-                      'actionField': {
-                        'list': "Home"
-                      },
-                      'products': [apuesta]
-                    }
-                  }
-                });
-                setTimeout(() => {
-                  setApuestasBorradasHome()
-                  setApuestasBotonesHome()
-                }, 2000);
-              })
-
-            });
-          });
-        });
-        //setItemsTabla(box)
-
-      });
-    }
-    setApuestasHome();
-    function setApuestasBorradasHome() {
-      let carrito = document.querySelector(".carrello-scrollable");
-      if (!carrito) return
-      let productos = document.querySelectorAll(".grid-schedina.grid-schedina-mobile.grid-schedina-multipla");
-      productos.forEach(producto => {
-        let papelera = producto.querySelector(".grid-schedina-intestazione button i");
-        papelera.addEventListener("click", function (e) {
-          let [deporte, liga] = producto.querySelector(".grid-schedina-intestazione_contenitore-testo p").innerText.split("-");
-          let pais = "";
-          let cuerpo = producto.querySelector(".grid-schedina-body")
-          let equipos = [...cuerpo.querySelectorAll(".grid-schedina-body_evento div")].map(texto => {
-            return texto.innerText
-          }).join(" ");
-          let apuestas = [...cuerpo.querySelectorAll(".grid-schedina-body_quote-riga")].map(texto => {
-            let descripcion = texto.querySelector(".grid-schedina-body_quote-riga_descrizione-quota")
-            let valor = texto.querySelector(".grid-schedina-body_quote-riga_valore-quota")
-            let apuesta = {
-              nombre: descripcion.innerText.split(":")[0],
-              eleccion: descripcion.innerText.split(":")[1],
-              valor: valor.innerText
-            }
-            return apuesta
-          });
-
-          let nombreApuesta = ""
-          let eleccionApuesta = ""
-          let valorApuesta = ""
-          apuestas.forEach(apuesta => {
-            nombreApuesta = `${nombreApuesta}${apuesta.nombre}`
-            eleccionApuesta = `${eleccionApuesta}${apuesta.eleccion}`
-            valorApuesta = `${valorApuesta}${apuesta.valor}`
-          });
-
-          let apuesta = {
-            'name': deporte,
-            'id': liga,
-            'price': valorApuesta,
-            'brand': pais,
-            'category': "Home",
-            'variant': "Principal",
-            'quantity': 1,
-            'dimension1': nombreApuesta,
-            'dimension2': eleccionApuesta,
-            'dimension3': equipos
-          }
-          console.log(apuesta)
-          dataLayer.push({
-            'event': 'ga_event',
-            'category': 'Quitar del Carrito',
-            'action': `${deporte} :: ${liga}`,
-            'label': `${nombreApuesta} :: ${eleccionApuesta}`,
-            'value': ''
-          });
-          dataLayer.push({
-            'event': 'removeFromCart',
-            'ecommerce': {
-              'currencyCode': 'COP',
-              'remove': {
-                'products': [apuesta]
-              }
-            }
-          });
-        })
-      });
-    }
-    function setApuestasBotonesHome() {
-
-      let carrito = document.querySelector(".carrello-fixed");
-      if (!carrito) return
-
-      let botones = carrito.querySelectorAll(".bottoni-schedina .bottone")
-      let botonComprar = carrito.querySelector(".bottoni-schedina .bottone.bg-verde")
-      botones.forEach(boton => {
-        boton.addEventListener('click', function (e) {
-
-          let productos = document.querySelectorAll(".grid-schedina.grid-schedina-mobile.grid-schedina-multipla");
-          let nombresApuestas = [];
-          let eleccionesApuestas = [];
-          let valoresApuestas = [];
-          let deportes = [];
-          let ligas = [];
-          let paises = []
-          let partidos = []
-          productos.forEach(producto => {
-            let [deporte, liga] = producto.querySelector(".grid-schedina-intestazione_contenitore-testo p").innerText.split("-");
-            let pais = "";
-            let cuerpo = producto.querySelector(".grid-schedina-body")
-            let equipos = [...cuerpo.querySelectorAll(".grid-schedina-body_evento div")].map(texto => {
-              return texto.innerText
-            }).join(" ");
-            let apuestas = [...cuerpo.querySelectorAll(".grid-schedina-body_quote-riga")].map(texto => {
-              let descripcion = texto.querySelector(".grid-schedina-body_quote-riga_descrizione-quota")
-              let valor = texto.querySelector(".grid-schedina-body_quote-riga_valore-quota")
-              let apuesta = {
-                nombre: descripcion.innerText.split(":")[0],
-                eleccion: descripcion.innerText.split(":")[1],
-                valor: valor.innerText
-              }
-              return apuesta
-            });
-
-            let nombreApuesta = ""
-            let eleccionApuesta = ""
-            let valorApuesta = ""
-            apuestas.forEach(apuesta => {
-              nombreApuesta = `${nombreApuesta}${apuesta.nombre}`
-              eleccionApuesta = `${eleccionApuesta}${apuesta.eleccion}`
-              valorApuesta = `${valorApuesta}${apuesta.valor}`
-            });
-            nombresApuestas.push(nombreApuesta);
-            eleccionesApuestas.push(eleccionApuesta);
-            valoresApuestas.push(valorApuesta);
-            deportes.push(deporte);
-            ligas.push(liga);
-            paises.push(pais);
-            partidos.push(equipo)
-          });
-          let data = {
-            name: deportes,
-            id: ligas,
-            price: valoresApuestas,
-            brand: paises,
-            category: "Home",
-            quantity: 1,
-            dimension1: nombresApuestas,
-            dimension2: eleccionesApuestas,
-            dimension3: partidos
-          }
-          console.log(data)
-
-          let label = boton.innerText;
-          dataLayer.push({
-            'event': 'ga_event',
-            'category': `Comprar :: ${label}`,
-            'action': `${data.deporte} :: ${data.liga}`,
-            'label': `${data.dimension1} :: ${data.dimension2}`,
-            'value': `${data.price}`
-          });
-          if (label.toUpperCase() == "COMPRAR") {
-            setTimeout(() => {
-              setApuestasCompraHome(data);
-            }, 1000);
-          }
-        })
-      });
-    }
-    function setApuestasCompraHome(data) {
-      let carrito = document.querySelector(".carrello-fixed");
-      if (!carrito) return
-      let monto = carrito.querySelector("div .valore-importo-totale-carrello").innerText.split(" ")[0];
-      let botones = carrito.querySelectorAll(".bottoni-schedina .bottone")
-      let botonConfirmar = carrito.querySelector(".bottoni-schedina .bottone.bg-blu")
-      dataLayer.push({
-        'event': 'checkout',
-        'ecommerce': {
-          'checkout': {
-            'actionField': {
-              'step': "Comprar"
-            },
-            'products': [data]
-          }
-        }
-      });
-      botonConfirmar.addEventListener('click', function (e) {
-        let time = Date.now();
-        let loginSession = localStorage.getItem("loginMessageSession");
-        let orderID = `${loginSession} :: time`;
-        dataLayer.push({
-          'event': 'transaction',
-          'ecommerce': {
-            'purchase': {
-              'actionField': {
-                'id': orderID,
-                'affiliation': "Aquijuego",
-                'revenue': monto,
-              },
-              'products': [data]
-            }
-          }
-        });
-      })
-
-    }
-
-    /*EN VIVO*/
-
-    function setApuestasLive() {
-      let boxs = document.querySelectorAll('.contenitore-table')
-      if (!boxs) return;
-      console.log(boxs)
-      boxs.forEach(box => {
-        let nombres = box.querySelector(".titolo-competizione-live span").innerText.split("-")
-        let deporte = nombres[0];
-        let pais = nombres[1];
-        let boxLiga = nombres[nombres.length - 1].split(" (")[0]
-
-        let apuestasPartidos = box.querySelectorAll(".tabellaQuoteNew");
-        apuestasPartidos.forEach(apuestaPartido => {
-
-          let partidos = apuestaPartido.querySelectorAll(".tabellaQuoteSquadre")
-          let equipos = "";
-          partidos.forEach(partido => {
-            equipos = partido.querySelectorAll("p")
-            equipos = [...equipos].map(equipo => {
-              return equipo.innerText
-            })
-            equipos = equipos.join(" ");
-          });
-
-          let action = `${nombres[0]} :: ${nombres[nombres.length - 1]}`
-          console.log(action);
-          let apuestas = apuestaPartido.querySelectorAll(".tabellaQuoteContenitoreQuotazioni .contenitoreSetQuotazioni")
-          apuestas.forEach(apuesta => {
-            let nombreApuesta = apuesta.querySelector(".tipologiaQuotazione_FormaCompatta").innerText;
-            let eleccionesApuestas = apuesta.querySelectorAll("div .contenitoreSingolaQuota")
-            eleccionesApuestas.forEach(eleccionApuesta => {
-              eleccionApuesta.addEventListener('click', function (e) {
-                let eleccionInfo = eleccionApuesta.querySelectorAll("p")
-                eleccionInfo = [...eleccionInfo].map(item => {
-                  return item.innerText
-                })
-                eleccionInfo = eleccionInfo.join(" ");
-
-                let data = {
-                  nombreApuesta,
-                  deporte,
-                  boxLiga,
-                  equipos,
-                  eleccionInfo,
-                  action
-                }
-
-                let apuesta = {
-                  'name': deporte,
-                  'id': boxLiga,
-                  'price': "",
-                  'brand': pais,
-                  'category': "En Vivo",
-                  'variant': "Principal",
-                  'quantity': 1,
-                  'dimension1': nombreApuesta,
-                  'dimension2': eleccionApuesta,
-                  'dimension3': equipos
-                }
-                console.log(data)
-                dataLayer.push({
-                  'event': 'ga_event',
-                  'category': 'Agregar al Carrito',
-                  'action': `${deporte} :: ${boxLiga}`,
-                  'label': `${nombreApuesta} :: ${eleccionInfo}`,
-                  'value': ''
-                });
-                dataLayer.push({
-                  'event': 'addToCart',
-                  'ecommerce': {
-                    'currencyCode': 'COP',
-                    'add': {
-                      'actionField': {
-                        'list': "En Vivo"
-                      },
-                      'products': [apuesta]
-                    }
-                  }
-                });
-                setTimeout(() => {
-                  setApuestasBorradasLive()
-                  setApuestasBotonesLive()
-                }, 2000);
-              })
-
-            });
-          });
-        });
-        //setItemsTabla(box)
-
-      });
-    }
-    function setApuestasBorradasLive() {
-      let carrito = document.querySelector(".carrello-scrollable");
-      if (!carrito) return
-      let productos = document.querySelectorAll(".grid-schedina.grid-schedina-mobile.grid-schedina-multipla");
-      productos.forEach(producto => {
-        let papelera = producto.querySelector(".grid-schedina-intestazione button i");
-        papelera.addEventListener("click", function (e) {
-          console.log("Borrando...")
-          let [deporte, liga] = producto.querySelector(".grid-schedina-intestazione_contenitore-testo p").innerText.split("-");
-          let pais = "";
-          let cuerpo = producto.querySelector(".grid-schedina-body")
-          let equipos = [...cuerpo.querySelectorAll(".grid-schedina-body_evento div")].map(texto => {
-            return texto.innerText
-          }).join(" ");
-          let apuestas = [...cuerpo.querySelectorAll(".grid-schedina-body_quote-riga")].map(texto => {
-            let descripcion = texto.querySelector(".grid-schedina-body_quote-riga_descrizione-quota")
-            let valor = texto.querySelector(".grid-schedina-body_quote-riga_valore-quota")
-            let apuesta = {
-              nombre: descripcion.innerText.split(":")[0],
-              eleccion: descripcion.innerText.split(":")[1],
-              valor: valor.innerText
-            }
-            return apuesta
-          });
-
-          let nombreApuesta = ""
-          let eleccionApuesta = ""
-          let valorApuesta = ""
-          apuestas.forEach(apuesta => {
-            nombreApuesta = `${nombreApuesta}${apuesta.nombre}`
-            eleccionApuesta = `${eleccionApuesta}${apuesta.eleccion}`
-            valorApuesta = `${valorApuesta}${apuesta.valor}`
-          });
-
-          let apuesta = {
-            'name': deporte,
-            'id': liga,
-            'price': valorApuesta,
-            'brand': pais,
-            'category': "En Vivo",
-            'variant': "Principal",
-            'quantity': 1,
-            'dimension1': nombreApuesta,
-            'dimension2': eleccionApuesta,
-            'dimension3': equipos
-          }
-          console.log(apuesta)
-          dataLayer.push({
-            'event': 'ga_event',
-            'category': 'Quitar del Carrito',
-            'action': `${deporte} :: ${liga}`,
-            'label': `${nombreApuesta} :: ${eleccionApuesta}`,
-            'value': ''
-          });
-          dataLayer.push({
-            'event': 'removeFromCart',
-            'ecommerce': {
-              'currencyCode': 'COP',
-              'remove': {
-                'products': [apuesta]
-              }
-            }
-          });
-        })
-      });
-    }
-    function setApuestasBotonesLive() {
-
-      let carrito = document.querySelector(".carrello-fixed");
-      if (!carrito) return
-
-      let botones = carrito.querySelectorAll(".bottoni-schedina .bottone")
-      let botonComprar = carrito.querySelector(".bottoni-schedina .bottone.bg-verde")
-      botones.forEach(boton => {
-        boton.addEventListener('click', function (e) {
-
-          let productos = document.querySelectorAll(".grid-schedina.grid-schedina-mobile.grid-schedina-multipla");
-          let nombresApuestas = [];
-          let eleccionesApuestas = [];
-          let valoresApuestas = [];
-          let deportes = [];
-          let ligas = [];
-          let paises = []
-          let partidos = []
-          productos.forEach(producto => {
-            let [deporte, liga] = producto.querySelector(".grid-schedina-intestazione_contenitore-testo p").innerText.split("-");
-            let pais = "";
-            let cuerpo = producto.querySelector(".grid-schedina-body")
-            let equipos = [...cuerpo.querySelectorAll(".grid-schedina-body_evento div")].map(texto => {
-              return texto.innerText
-            }).join(" ");
-            let apuestas = [...cuerpo.querySelectorAll(".grid-schedina-body_quote-riga")].map(texto => {
-              let descripcion = texto.querySelector(".grid-schedina-body_quote-riga_descrizione-quota")
-              let valor = texto.querySelector(".grid-schedina-body_quote-riga_valore-quota")
-              let apuesta = {
-                nombre: descripcion.innerText.split(":")[0],
-                eleccion: descripcion.innerText.split(":")[1],
-                valor: valor.innerText
-              }
-              return apuesta
-            });
-
-            let nombreApuesta = ""
-            let eleccionApuesta = ""
-            let valorApuesta = ""
-            apuestas.forEach(apuesta => {
-              nombreApuesta = `${nombreApuesta}${apuesta.nombre}`
-              eleccionApuesta = `${eleccionApuesta}${apuesta.eleccion}`
-              valorApuesta = `${valorApuesta}${apuesta.valor}`
-            });
-            nombresApuestas.push(nombreApuesta);
-            eleccionesApuestas.push(eleccionApuesta);
-            valoresApuestas.push(valorApuesta);
-            deportes.push(deporte);
-            ligas.push(liga);
-            paises.push(pais);
-            partidos.push(equipo)
-          });
-          let data = {
-            name: deportes,
-            id: ligas,
-            price: valoresApuestas,
-            brand: paises,
-            category: "En Vivo",
-            quantity: 1,
-            dimension1: nombresApuestas,
-            dimension2: eleccionesApuestas,
-            dimension3: partidos
-          }
-          console.log(data)
-
-          let label = boton.innerText;
-          dataLayer.push({
-            'event': 'ga_event',
-            'category': `Comprar :: ${label}`,
-            'action': `${data.deporte} :: ${data.liga}`,
-            'label': `${data.dimension1} :: ${data.dimension2}`,
-            'value': `${data.price}`
-          });
-          if (label.toUpperCase() == "COMPRAR") {
-            setTimeout(() => {
-              setApuestasCompraLive(data);
-            }, 1000);
-          }
-        })
-      });
-    }
-    function setApuestasCompraLive(data) {
-      console.log("En compra")
-      let carrito = document.querySelector(".carrello-fixed");
-      if (!carrito) return
-      let monto = carrito.querySelector("div .valore-importo-totale-carrello").innerText.split(" ")[0];
-      let botones = carrito.querySelectorAll(".bottoni-schedina .bottone")
-      let botonConfirmar = carrito.querySelector(".bottoni-schedina .bottone.bg-blu")
-      dataLayer.push({
-        'event': 'checkout',
-        'ecommerce': {
-          'checkout': {
-            'actionField': {
-              'step': "Comprar"
-            },
-            'products': [data]
-          }
-        }
-      });
-      botonConfirmar.addEventListener('click', function (e) {
-        let time = Date.now();
-        let loginSession = localStorage.getItem("loginMessageSession");
-        let orderID = `${loginSession} :: time`;
-        dataLayer.push({
-          'event': 'transaction',
-          'ecommerce': {
-            'purchase': {
-              'actionField': {
-                'id': orderID,
-                'affiliation': "Aquijuego",
-                'revenue': monto,
-              },
-              'products': [data]
-            }
-          }
-        });
-      })
-
-    }
-    setApuestasLive();
-    setApuestasBorradasLive()
-    setApuestasBotonesLive()
-    /*VIRTUAL*/
-
-    /*CASINO*/
-
-    function setMenuCasino() {
-      let items = document.querySelectorAll("#menuContainer div a");
-      if (!items) return;
-      items.forEach(item => {
-        let label = item.innerText;
-        item.addEventListener('click', function (e) {
-          dataLayer.push({
-            'event': 'ga_event',
-            'category': 'Casino :: Menú',
-            'action': 'Click',
-            'label': label,
-            'value': ''
-          });
-        })
-      });
-    }
-    setMenuCasino();
-
-    function setFiltroCasino() {
-      let filtroPlataforma = document.querySelectorAll(".filtri-casino div #listaPiattaforme #piattaforme div")
-      if (!filtroPlataforma) return;
-      filtroPlataforma.forEach(item => {
-        let label = item.innerText
-        item.addEventListener('click', function (e) {
-          console.log(label)
-          dataLayer.push({
-            'event': 'ga_event',
-            'category': 'Casino :: Filtro Plataforma',
-            'action': 'Click',
-            'label': label,
-            'value': ''
-          });
-        })
-      });
-      let filtroOrdenar = document.querySelectorAll(".filtri-casino div div div .sortFilter")
-      if (!filtroOrdenar) return;
-      filtroOrdenar.forEach(item => {
-        let label = item.innerText
-        item.addEventListener('click', function (e) {
-          console.log(label)
-          dataLayer.push({
-            'event': 'ga_event',
-            'category': 'Casino :: Filtro Ordenar',
-            'action': 'Click',
-            'label': label,
-            'value': ''
-          });
-        })
-      });
-    }
-    setFiltroCasino();
-
-    function setJuegosCasino() {
-      let juegos = document.querySelectorAll("#contentGames .blocco-mosaico.game");
-      if (!juegos) return;
-      juegos.forEach(juego => {
-        let nombre = juego.querySelector('div p a').innerText
-        let botones = juego.querySelectorAll('div p.bottone');
-        botones.forEach(boton => {
-          let nombreBoton = boton.innerText
-          boton.addEventListener('click', function (e) {
-            dataLayer.push({
-              'event': 'ga_event',
-              'category': 'Casino :: Juegos',
-              'action': `Click:: ${nombreBoton}`,
-              'label': `${nombre}`,
-              'value': ''
-            });
-          })
-        });
-      });
-    }
-    setJuegosCasino();
-
-    function setBannerCasino() {
-      let banners = document.querySelectorAll(".banner-casino div div div .carousel-item img");
-      if (!banners) return;
-      banners.forEach((banner, index) => {
-        let imgSrc = banner.src;
-        let id = imgSrc;
-        let name = imgSrc;
-        let creative = imgSrc;
-        let promoObj = {
-          id,
-          name,
-          creative
-        }
+  function setMenuPromo() {
+    let items = document.querySelectorAll("#cg-promo-submenu ul li");
+    if (!items) return
+    items.forEach(item => {
+      let nombre = item.innerText;
+      item.addEventListener('click', function (e) {
         dataLayer.push({
           'event': 'ga_event',
-          'category': 'Casino :: Banner',
-          'action': 'Casino-Banner',
-          'label': imgSrc,
+          'category': 'Promo :: Menú',
+          'action': 'Click',
+          'label': nombre,
           'value': ''
         });
-        banner.addEventListener('click', function (e) {
-          let imgSrc = e.target.src;
-          console.log(imgSrc);
-          dataLayer.push({
-            'event': 'promotionClick',
-            'ecommerce': {
-              'promoClick': {
-                'promotions': [
-                  {
-                    'id': promoObj.id,
-                    'name': promoObj.name,
-                    'creative': promoObj.creative,
-                    'position': `Casino - Banner - ${index}`
-                  },
-                ]
-              }
-            }
-          });
+      })
+    });
+  }
+  setMenuPromo();
 
-        })
-        dataLayer.push({
-          'event': 'promoview',
-          'ecommerce': {
-            'promoView': {
-              'promotions': [
-                {
-                  'id': promoObj.id,
-                  'name': promoObj.name,
-                  'creative': promoObj.creative,
-                  'position': `Casino - Banner - ${index}`
-                },
-              ]
-            }
-          }
-        });
-
-      });
-    }
-    setBannerCasino();
-
-    /*PROMO*/
-
-    function setArticulosPromo() {
-      let items = document.querySelectorAll(".promo-landing.container div div.elenco-promo .card.elemento-promozioni-modale.filter");
-      if (!items) return
-      items.forEach(item => {
-        let nombre = item.querySelector("div h5").innerText;
-        item.addEventListener('click', function (e) {
-          console.log(nombre);
-          dataLayer.push({
-            'event': 'ga_event',
-            'category': 'Promo :: Artículos',
-            'action': 'Click',
-            'label': nombre,
-            'value': ''
-          });
-        });
-      });
-    }
-    setArticulosPromo();
-
-    function setMenuPromo() {
-      let items = document.querySelectorAll("#cg-promo-submenu ul li");
-      if (!items) return
-      items.forEach(item => {
-        let nombre = item.innerText;
-        item.addEventListener('click', function (e) {
-          dataLayer.push({
-            'event': 'ga_event',
-            'category': 'Promo :: Menú',
-            'action': 'Click',
-            'label': nombre,
-            'value': ''
-          });
-        })
-      });
-    }
-    setMenuPromo();
-
-  })
+})
