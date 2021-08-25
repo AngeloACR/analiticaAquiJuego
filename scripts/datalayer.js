@@ -959,7 +959,6 @@ window.addEventListener('load', function () {
 
     });
   }
-  setApuestasHome();
   function setApuestasBorradasHome() {
     let carrito = document.querySelector(".carrello-scrollable");
     if (!carrito) return
@@ -1425,7 +1424,6 @@ window.addEventListener('load', function () {
   setApuestasLive();
   setApuestasBorradasLive()
   setApuestasBotonesLive()
-  /*VIRTUAL*/
 
   /*CASINO*/
 
