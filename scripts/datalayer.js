@@ -994,8 +994,6 @@ window.addEventListener('load', function () {
       botones.forEach(boton => {
         let nombreBoton = boton.innerText
         boton.addEventListener('click', function (e) {
-          console.log(nombreBoton)
-          console.log(nombre)
           dataLayer.push({
             'event': 'ga_event',
             'category': 'Casino :: Juegos',

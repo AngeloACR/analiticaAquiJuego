@@ -33,7 +33,7 @@ window.addEventListener('load', function () {
     let id8 = "xp-deposit-method-payu-baloto"
     let id9 = "xp-deposit-method-astropay-puntored"
 
-    let depositButton1 = document.querySelectorAll(`#${id1} div button.xp-deposit-button`);
+    let depositButton1 = document.querySelector(`#${id1} div button.xp-deposit-button`);
     if (!depositButton1) return;
 
     depositButton1.addEventLister('click', function (e) {
@@ -48,7 +48,7 @@ window.addEventListener('load', function () {
       });
 
     })
-    let depositButton2 = document.querySelectorAll(`#${id2} div button.xp-deposit-button`);
+    let depositButton2 = document.querySelector(`#${id2} div button.xp-deposit-button`);
     if (!depositButton2) return;
 
     depositButton2.addEventLister('click', function (e) {
@@ -62,7 +62,7 @@ window.addEventListener('load', function () {
         'value': value
       });
     })
-    let depositButton3 = document.querySelectorAll(`#${id3} div button.xp-deposit-button`);
+    let depositButton3 = document.querySelector(`#${id3} div button.xp-deposit-button`);
     if (!depositButton3) return;
 
     depositButton3.addEventLister('click', function (e) {
@@ -76,7 +76,7 @@ window.addEventListener('load', function () {
         'value': value
       });
     })
-    let depositButton4 = document.querySelectorAll(`#${id4} div button.xp-deposit-button`);
+    let depositButton4 = document.querySelector(`#${id4} div button.xp-deposit-button`);
     if (!depositButton4) return;
 
     depositButton4.addEventLister('click', function (e) {
@@ -90,7 +90,7 @@ window.addEventListener('load', function () {
         'value': value
       });
     })
-    let depositButton5 = document.querySelectorAll(`#${id5} div button.xp-deposit-button`);
+    let depositButton5 = document.querySelector(`#${id5} div button.xp-deposit-button`);
     if (!depositButton5) return;
 
     depositButton5.addEventLister('click', function (e) {
@@ -104,7 +104,7 @@ window.addEventListener('load', function () {
         'value': value
       });
     })
-    let depositButton6 = document.querySelectorAll(`#${id6} div button.xp-deposit-button`);
+    let depositButton6 = document.querySelector(`#${id6} div button.xp-deposit-button`);
     if (!depositButton6) return;
 
     depositButton6.addEventLister('click', function (e) {
@@ -118,7 +118,7 @@ window.addEventListener('load', function () {
         'value': value
       });
     })
-    let depositButton7 = document.querySelectorAll(`#${id7} div button.xp-deposit-button`);
+    let depositButton7 = document.querySelector(`#${id7} div button.xp-deposit-button`);
     if (!depositButton7) return;
 
     depositButton7.addEventLister('click', function (e) {
@@ -132,7 +132,7 @@ window.addEventListener('load', function () {
         'value': value
       });
     })
-    let depositButton8 = document.querySelectorAll(`#${id8} div button.xp-deposit-button`);
+    let depositButton8 = document.querySelector(`#${id8} div button.xp-deposit-button`);
     if (!depositButton8) return;
 
     depositButton8.addEventLister('click', function (e) {
@@ -146,7 +146,7 @@ window.addEventListener('load', function () {
         'value': value
       });
     })
-    let depositButton9 = document.querySelectorAll(`#${id9} div button.xp-deposit-button`);
+    let depositButton9 = document.querySelector(`#${id9} div button.xp-deposit-button`);
     if (!depositButton9) return;
 
     depositButton9.addEventLister('click', function (e) {
@@ -171,7 +171,7 @@ window.addEventListener('load', function () {
     let retiro4 = document.getElementById("xp-withdraw-method-astropay-bonifico-bancario-co");
 
     //retiro1.addEventListener('click', function (e) {
-    let withdrawButton1 = document.querySelectorAll("#xp-withdraw-method-bonifico-bancario-co div button.xp-confirm-button")[0];
+    let withdrawButton1 = document.querySelector("#xp-withdraw-method-bonifico-bancario-co div button.xp-confirm-button")[0];
     if (!withdrawButton1) return;
     withdrawButton1.addEventListener('click', function (e) {
       let value = document.getElementById("bonifico-bancario-co-withdrawal-amount").value;
@@ -186,7 +186,7 @@ window.addEventListener('load', function () {
     })
     //})
     //retiro2.addEventListener('click', function (e) {
-    let withdrawButton2 = document.querySelectorAll("#xp-withdraw-method-voucher div button.xp-confirm-button")[0];
+    let withdrawButton2 = document.querySelector("#xp-withdraw-method-voucher div button.xp-confirm-button")[0];
     if (!withdrawButton2) return;
     withdrawButton2.addEventListener('click', function (e) {
       let value = document.getElementById("voucher-withdrawal-amount").value;
@@ -201,7 +201,7 @@ window.addEventListener('load', function () {
     })
     //})
     //retiro3.addEventListener('click', function (e) {
-    let withdrawButton3 = document.querySelectorAll("#xp-withdraw-method-voucher-efecty div button.xp-confirm-button")[0];
+    let withdrawButton3 = document.querySelector("#xp-withdraw-method-voucher-efecty div button.xp-confirm-button")[0];
     if (!withdrawButton3) return;
     withdrawButton3.addEventListener('click', function (e) {
       let value = document.getElementById("voucher-efecty-withdrawal-amount").value;
@@ -216,7 +216,7 @@ window.addEventListener('load', function () {
     })
     //})
     //retiro4.addEventListener('click', function (e) {
-    let withdrawButton4 = document.querySelectorAll("#xp-withdraw-method-astropay-bonifico-bancario-co div button.xp-confirm-button")[0];
+    let withdrawButton4 = document.querySelector("#xp-withdraw-method-astropay-bonifico-bancario-co div button.xp-confirm-button")[0];
     if (!withdrawButton4) return;
     withdrawButton4.addEventListener('click', function (e) {
       let value = document.getElementById("astropay-bonifico-bancario-co-withdrawal-amount").value;
