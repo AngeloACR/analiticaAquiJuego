@@ -174,10 +174,10 @@ window.addEventListener('load', function () {
   setRecarga();
 
   function setRetiro() {
-    let retiro1 = document.getElementById("xp-withdraw-method-bonifico-bancario-co");
-    let retiro2 = document.getElementById("xp-withdraw-method-voucher");
-    let retiro3 = document.getElementById("xp-withdraw-method-voucher-efecty");
-    let retiro4 = document.getElementById("xp-withdraw-method-astropay-bonifico-bancario-co");
+    let retiro1 = document.querySelectorAll(".xp-metodi-pagamento div span")[0];
+    let retiro2 = document.querySelectorAll(".xp-metodi-pagamento div span")[1];
+    let retiro3 = document.querySelectorAll(".xp-metodi-pagamento div span")[2];
+    let retiro4 = document.querySelectorAll(".xp-metodi-pagamento div span")[3];
     let retiro1Set = false;
     let retiro2Set = false;
     let retiro3Set = false;
