@@ -171,7 +171,7 @@ window.addEventListener('load', function () {
     let retiro4 = document.getElementById("xp-withdraw-method-astropay-bonifico-bancario-co");
 
     //retiro1.addEventListener('click', function (e) {
-    let withdrawButton1 = document.querySelector("#xp-withdraw-method-bonifico-bancario-co div button.xp-confirm-button")[0];
+    let withdrawButton1 = document.querySelectorAll("#xp-withdraw-method-bonifico-bancario-co div button.xp-confirm-button")[0];
     if (!withdrawButton1) return;
     withdrawButton1.addEventListener('click', function (e) {
       let value = document.getElementById("bonifico-bancario-co-withdrawal-amount").value;
@@ -186,7 +186,7 @@ window.addEventListener('load', function () {
     })
     //})
     //retiro2.addEventListener('click', function (e) {
-    let withdrawButton2 = document.querySelector("#xp-withdraw-method-voucher div button.xp-confirm-button")[0];
+    let withdrawButton2 = document.querySelectorAll("#xp-withdraw-method-voucher div button.xp-confirm-button")[0];
     if (!withdrawButton2) return;
     withdrawButton2.addEventListener('click', function (e) {
       let value = document.getElementById("voucher-withdrawal-amount").value;
@@ -201,7 +201,7 @@ window.addEventListener('load', function () {
     })
     //})
     //retiro3.addEventListener('click', function (e) {
-    let withdrawButton3 = document.querySelector("#xp-withdraw-method-voucher-efecty div button.xp-confirm-button")[0];
+    let withdrawButton3 = document.querySelectorAll("#xp-withdraw-method-voucher-efecty div button.xp-confirm-button")[0];
     if (!withdrawButton3) return;
     withdrawButton3.addEventListener('click', function (e) {
       let value = document.getElementById("voucher-efecty-withdrawal-amount").value;
@@ -216,7 +216,7 @@ window.addEventListener('load', function () {
     })
     //})
     //retiro4.addEventListener('click', function (e) {
-    let withdrawButton4 = document.querySelector("#xp-withdraw-method-astropay-bonifico-bancario-co div button.xp-confirm-button")[0];
+    let withdrawButton4 = document.querySelectorAll("#xp-withdraw-method-astropay-bonifico-bancario-co div button.xp-confirm-button")[0];
     if (!withdrawButton4) return;
     withdrawButton4.addEventListener('click', function (e) {
       let value = document.getElementById("astropay-bonifico-bancario-co-withdrawal-amount").value;
