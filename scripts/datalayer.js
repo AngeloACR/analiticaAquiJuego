@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
 
   /*HOME*/
-
+  let envivoSet = false;
   function setTranversal() {
     let login = document.querySelectorAll(".bottone.bottone-login")[0]
     if (!login) return;
@@ -36,6 +36,15 @@ window.addEventListener('load', function () {
           'label': menuText,
           'value': ''
         });
+        if (menuText == 'EN VIVO' && !envivoSet) {
+          setTimeout(() => {
+
+            setApuestasLive();
+            setApuestasBorradasLive();
+            setApuestasBotonesLive();
+            envivoSet = true;
+          }, 3000);
+        }
       })
     });
   }
@@ -641,6 +650,7 @@ window.addEventListener('load', function () {
     if (!boxs) return;
     console.log(boxs)
     boxs.forEach(box => {
+      if (!box) return;
       let nombres = box.querySelector(".titolo-competizione-live span").innerText.split("-")
       let deporte = nombres[0];
       let pais = nombres[1];
