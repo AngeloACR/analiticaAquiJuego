@@ -26,6 +26,8 @@ window.addEventListener('load', function () {
     let menuPrincipal = document.querySelectorAll(".menu-principale-barra .menu-principale li");
     if (!menuPrincipal) return;
     menuPrincipal.forEach(menu => {
+      if (!menu) return;
+      console.log(menuText);
       menu.addEventListener('click', function (e) {
         let menuText = menu.innerText;
         console.log(menuText);
