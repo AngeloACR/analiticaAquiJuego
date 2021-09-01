@@ -171,7 +171,6 @@ window.addEventListener('load', function () {
     console.log(depositButton9);
 
   }
-  setRecarga();
 
   function setRetiro() {
     let retiro1 = document.querySelectorAll(".xp-metodi-pagamento div span")[0];
@@ -250,8 +249,10 @@ window.addEventListener('load', function () {
       })
       retiro4Set = true;
     })
-
+    retiro1.click();
   }
-  setRetiro();
-
+  setTimeout(() => {
+    setRecarga();
+    setRetiro();
+  }, 3000);
 })
