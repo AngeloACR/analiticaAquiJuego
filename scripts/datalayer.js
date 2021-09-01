@@ -29,25 +29,27 @@ window.addEventListener('load', function () {
       if (!menu) return;
       let menuText = menu.innerText;
       console.log(menuText);
-      menu.addEventListener('click', function (e) {
-        let menuText = menu.querySelector("a").innerText;
-        console.log(menuText);
-        dataLayer.push({
-          'event': 'ga_event',
-          'category': 'Menú principal',
-          'action': 'Click',
-          'label': menuText,
-          'value': ''
-        });
-        if (menuText == 'EN VIVO' && !envivoSet) {
-          setTimeout(() => {
+      setTimeout(() => {
+        menu.addEventListener('click', function (e) {
+          let menuText = menu.querySelector("a").innerText;
+          console.log(menuText);
+          dataLayer.push({
+            'event': 'ga_event',
+            'category': 'Menú principal',
+            'action': 'Click',
+            'label': menuText,
+            'value': ''
+          });
+          if (menuText == 'EN VIVO' && !envivoSet) {
+            setTimeout(() => {
 
-            setApuestasLive();
-            setApuestasBorradasLive();
-            setApuestasBotonesLive();
-            envivoSet = true;
-          }, 3000);
-        }
+              setApuestasLive();
+              setApuestasBorradasLive();
+              setApuestasBotonesLive();
+              envivoSet = true;
+            }, 3000);
+          }
+        })
       })
     });
   }
