@@ -27,9 +27,10 @@ window.addEventListener('load', function () {
     if (!menuPrincipal) return;
     menuPrincipal.forEach(menu => {
       if (!menu) return;
+      let menuText = menu.innerText;
       console.log(menuText);
       menu.addEventListener('click', function (e) {
-        let menuText = menu.innerText;
+        let menuText = menu.querySelector("a").innerText;
         console.log(menuText);
         dataLayer.push({
           'event': 'ga_event',
