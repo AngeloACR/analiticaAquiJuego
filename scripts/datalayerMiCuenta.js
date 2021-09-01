@@ -254,5 +254,5 @@ window.addEventListener('load', function () {
   setTimeout(() => {
     setRecarga();
     setRetiro();
-  }, 3000);
+  }, 5000);
 })
