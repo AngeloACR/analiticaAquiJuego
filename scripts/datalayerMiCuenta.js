@@ -49,7 +49,7 @@ window.addEventListener('load', function () {
       if (!depositButton1) return;
       if (recarga1Set) return
       depositButton1.addEventListener('click', function (e) {
-        let value = document.getElementById("scratch-card-code");
+        let value = document.getElementById("scratch-card-code").value;
         console.log(value)
         dataLayer.push({
           'event': 'ga_event',
@@ -67,7 +67,7 @@ window.addEventListener('load', function () {
       if (!depositButton2) return;
       if (recarga2Set) return
       depositButton2.addEventListener('click', function (e) {
-        let value = document.getElementById("payu-cc-deposit-amount");
+        let value = document.getElementById("payu-cc-deposit-amount").value;
         console.log(value)
         dataLayer.push({
           'event': 'ga_event',
@@ -84,7 +84,7 @@ window.addEventListener('load', function () {
       if (!depositButton3) return;
       if (recarga3Set) return
       depositButton3.addEventListener('click', function (e) {
-        let value = document.getElementById("astropay-pse-deposit-amount");
+        let value = document.getElementById("astropay-pse-deposit-amount").value;
         console.log(value)
         dataLayer.push({
           'event': 'ga_event',
@@ -101,7 +101,7 @@ window.addEventListener('load', function () {
       if (!depositButton4) return;
       if (recarga4Set) return
       depositButton4.addEventListener('click', function (e) {
-        let value = document.getElementById("payu-pse-deposit-amount");
+        let value = document.getElementById("payu-pse-deposit-amount").value;
         console.log(value)
         dataLayer.push({
           'event': 'ga_event',
@@ -118,7 +118,7 @@ window.addEventListener('load', function () {
       if (!depositButton5) return;
       if (recarga5Set) return
       depositButton5.addEventListener('click', function (e) {
-        let value = document.getElementById("astropay-efecty-deposit-amount");
+        let value = document.getElementById("astropay-efecty-deposit-amount").value;
         console.log(value)
         dataLayer.push({
           'event': 'ga_event',
@@ -135,7 +135,7 @@ window.addEventListener('load', function () {
       if (!depositButton6) return;
       if (recarga6Set) return
       depositButton6.addEventListener('click', function (e) {
-        let value = document.getElementById("payu-efecty-deposit-amount");
+        let value = document.getElementById("payu-efecty-deposit-amount").value;
         console.log(value)
         dataLayer.push({
           'event': 'ga_event',
@@ -152,7 +152,7 @@ window.addEventListener('load', function () {
       if (!depositButton7) return;
       if (recarga7Set) return
       depositButton7.addEventListener('click', function (e) {
-        let value = document.getElementById("astropay-baloto-deposit-amount");
+        let value = document.getElementById("astropay-baloto-deposit-amount").value;
         console.log(value)
         dataLayer.push({
           'event': 'ga_event',
@@ -169,7 +169,7 @@ window.addEventListener('load', function () {
       if (!depositButton8) return;
       if (recarga8Set) return
       depositButton8.addEventListener('click', function (e) {
-        let value = document.getElementById("payu-baloto-deposit-amount");
+        let value = document.getElementById("payu-baloto-deposit-amount").value;
         console.log(value)
         dataLayer.push({
           'event': 'ga_event',
@@ -186,7 +186,7 @@ window.addEventListener('load', function () {
       if (!depositButton9) return;
       if (recarga9Set) return
       depositButton9.addEventListener('click', function (e) {
-        let value = document.getElementById("astropay-puntored-deposit-amount");
+        let value = document.getElementById("astropay-puntored-deposit-amount").value;
         console.log(value)
         dataLayer.push({
           'event': 'ga_event',
