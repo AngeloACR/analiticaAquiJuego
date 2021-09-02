@@ -13,15 +13,15 @@ window.addEventListener('load', function () {
   setCargaDocumento();
 
   function setRecarga() {
-    let recarga1 = document.querySelectorAll(".xp-metodi-pagamento span")[1];
-    let recarga2 = document.querySelectorAll(".xp-metodi-pagamento span")[2];
-    let recarga3 = document.querySelectorAll(".xp-metodi-pagamento span")[3];
-    let recarga4 = document.querySelectorAll(".xp-metodi-pagamento span")[4];
-    let recarga5 = document.querySelectorAll(".xp-metodi-pagamento span")[5];
-    let recarga6 = document.querySelectorAll(".xp-metodi-pagamento span")[6];
-    let recarga7 = document.querySelectorAll(".xp-metodi-pagamento span")[7];
-    let recarga8 = document.querySelectorAll(".xp-metodi-pagamento span")[8];
-    let recarga9 = document.querySelectorAll(".xp-metodi-pagamento span")[9];
+    let recarga1 = document.querySelectorAll(".xp-metodi-pagamento div span")[1];
+    let recarga2 = document.querySelectorAll(".xp-metodi-pagamento div span")[2];
+    let recarga3 = document.querySelectorAll(".xp-metodi-pagamento div span")[3];
+    let recarga4 = document.querySelectorAll(".xp-metodi-pagamento div span")[4];
+    let recarga5 = document.querySelectorAll(".xp-metodi-pagamento div span")[5];
+    let recarga6 = document.querySelectorAll(".xp-metodi-pagamento div span")[6];
+    let recarga7 = document.querySelectorAll(".xp-metodi-pagamento div span")[7];
+    let recarga8 = document.querySelectorAll(".xp-metodi-pagamento div span")[8];
+    let recarga9 = document.querySelectorAll(".xp-metodi-pagamento div span")[9];
 
 
     let recarga1Set = false
