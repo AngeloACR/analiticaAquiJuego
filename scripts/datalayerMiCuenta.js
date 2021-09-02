@@ -14,24 +14,14 @@ window.addEventListener('load', function () {
 
   function setRecarga() {
     let recarga1 = document.querySelectorAll(".xp-metodi-pagamento div span")[0];
-    console.log(recarga1)
     let recarga2 = document.querySelectorAll(".xp-metodi-pagamento div span")[1];
-    console.log(recarga2)
     let recarga3 = document.querySelectorAll(".xp-metodi-pagamento div span")[2];
-    console.log(recarga3)
     let recarga4 = document.querySelectorAll(".xp-metodi-pagamento div span")[3];
-    console.log(recarga4)
     let recarga5 = document.querySelectorAll(".xp-metodi-pagamento div span")[4];
-    console.log(recarga5)
     let recarga6 = document.querySelectorAll(".xp-metodi-pagamento div span")[5];
-    console.log(recarga6)
     let recarga7 = document.querySelectorAll(".xp-metodi-pagamento div span")[6];
-    console.log(recarga7)
     let recarga8 = document.querySelectorAll(".xp-metodi-pagamento div span")[7];
-    console.log(recarga8)
     let recarga9 = document.querySelectorAll(".xp-metodi-pagamento div span")[9];
-    console.log(recarga9)
-
 
     let recarga1Set = false
     let recarga2Set = false
@@ -55,6 +45,7 @@ window.addEventListener('load', function () {
 
     recarga1.addEventListener('click', function (e) {
       let depositButton1 = document.querySelector(`#${id1} div button.xp-deposit-button`);
+      console.log(depositButton1);
       if (!depositButton1) return;
       if (recarga1Set) return
       depositButton1.addEventLister('click', function (e) {
