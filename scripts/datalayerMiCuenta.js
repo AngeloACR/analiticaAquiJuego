@@ -14,14 +14,23 @@ window.addEventListener('load', function () {
 
   function setRecarga() {
     let recarga1 = document.querySelectorAll(".xp-metodi-pagamento div span")[0];
+    console.log(recarga1)
     let recarga2 = document.querySelectorAll(".xp-metodi-pagamento div span")[1];
+    console.log(recarga2)
     let recarga3 = document.querySelectorAll(".xp-metodi-pagamento div span")[2];
+    console.log(recarga3)
     let recarga4 = document.querySelectorAll(".xp-metodi-pagamento div span")[3];
+    console.log(recarga4)
     let recarga5 = document.querySelectorAll(".xp-metodi-pagamento div span")[4];
+    console.log(recarga5)
     let recarga6 = document.querySelectorAll(".xp-metodi-pagamento div span")[5];
+    console.log(recarga6)
     let recarga7 = document.querySelectorAll(".xp-metodi-pagamento div span")[6];
+    console.log(recarga7)
     let recarga8 = document.querySelectorAll(".xp-metodi-pagamento div span")[7];
+    console.log(recarga8)
     let recarga9 = document.querySelectorAll(".xp-metodi-pagamento div span")[9];
+    console.log(recarga9)
 
 
     let recarga1Set = false
@@ -47,7 +56,7 @@ window.addEventListener('load', function () {
     recarga1.addEventListener('click', function (e) {
       let depositButton1 = document.querySelector(`#${id1} div button.xp-deposit-button`);
       if (!depositButton1) return;
-      if (!recarga1Set) return
+      if (recarga1Set) return
       depositButton1.addEventLister('click', function (e) {
         let value = document.getElementById("scratch-card-code");
         console.log(value)
@@ -65,7 +74,7 @@ window.addEventListener('load', function () {
     recarga2.addEventListener('click', function (e) {
       let depositButton2 = document.querySelector(`#${id2} div button.xp-deposit-button`);
       if (!depositButton2) return;
-      if (!recarga2Set) return
+      if (recarga2Set) return
       depositButton2.addEventLister('click', function (e) {
         let value = document.getElementById("payu-cc-deposit-amount");
         console.log(value)
@@ -82,7 +91,7 @@ window.addEventListener('load', function () {
     recarga3.addEventListener('click', function (e) {
       let depositButton3 = document.querySelector(`#${id3} div button.xp-deposit-button`);
       if (!depositButton3) return;
-      if (!recarga3Set) return
+      if (recarga3Set) return
       depositButton3.addEventLister('click', function (e) {
         let value = document.getElementById("astropay-pse-deposit-amount");
         console.log(value)
@@ -99,7 +108,7 @@ window.addEventListener('load', function () {
     recarga4.addEventListener('click', function (e) {
       let depositButton4 = document.querySelector(`#${id4} div button.xp-deposit-button`);
       if (!depositButton4) return;
-      if (!recarga4Set) return
+      if (recarga4Set) return
       depositButton4.addEventLister('click', function (e) {
         let value = document.getElementById("payu-pse-deposit-amount");
         console.log(value)
@@ -116,7 +125,7 @@ window.addEventListener('load', function () {
     recarga5.addEventListener('click', function (e) {
       let depositButton5 = document.querySelector(`#${id5} div button.xp-deposit-button`);
       if (!depositButton5) return;
-      if (!recarga5Set) return
+      if (recarga5Set) return
       depositButton5.addEventLister('click', function (e) {
         let value = document.getElementById("astropay-efecty-deposit-amount");
         console.log(value)
@@ -133,7 +142,7 @@ window.addEventListener('load', function () {
     recarga6.addEventListener('click', function (e) {
       let depositButton6 = document.querySelector(`#${id6} div button.xp-deposit-button`);
       if (!depositButton6) return;
-      if (!recarga6Set) return
+      if (recarga6Set) return
       depositButton6.addEventLister('click', function (e) {
         let value = document.getElementById("payu-efecty-deposit-amount");
         console.log(value)
@@ -150,7 +159,7 @@ window.addEventListener('load', function () {
     recarga7.addEventListener('click', function (e) {
       let depositButton7 = document.querySelector(`#${id7} div button.xp-deposit-button`);
       if (!depositButton7) return;
-      if (!recarga7Set) return
+      if (recarga7Set) return
       depositButton7.addEventLister('click', function (e) {
         let value = document.getElementById("astropay-baloto-deposit-amount");
         console.log(value)
@@ -167,7 +176,7 @@ window.addEventListener('load', function () {
     recarga8.addEventListener('click', function (e) {
       let depositButton8 = document.querySelector(`#${id8} div button.xp-deposit-button`);
       if (!depositButton8) return;
-      if (!recarga8Set) return
+      if (recarga8Set) return
       depositButton8.addEventLister('click', function (e) {
         let value = document.getElementById("payu-baloto-deposit-amount");
         console.log(value)
@@ -184,7 +193,7 @@ window.addEventListener('load', function () {
     recarga9.addEventListener('click', function (e) {
       let depositButton9 = document.querySelector(`#${id9} div button.xp-deposit-button`);
       if (!depositButton9) return;
-      if (!recarga9Set) return
+      if (recarga9Set) return
       depositButton9.addEventLister('click', function (e) {
         let value = document.getElementById("astropay-puntored-deposit-amount");
         console.log(value)
