@@ -13,15 +13,26 @@ window.addEventListener('load', function () {
   setCargaDocumento();
 
   function setRecarga() {
-    let recarga1 = document.getElementById("xp-deposit-method-scratch-card");
-    let recarga2 = document.getElementById("xp-deposit-method-payu-cc");
-    let recarga3 = document.getElementById("xp-deposit-method-astropay-pse");
-    let recarga4 = document.getElementById("xp-deposit-method-payu-pse");
-    let recarga5 = document.getElementById("xp-deposit-method-astropay-efecty");
-    let recarga6 = document.getElementById("xp-deposit-method-payu-efecty");
-    let recarga7 = document.getElementById("xp-deposit-method-astropay-baloto");
-    let recarga8 = document.getElementById("xp-deposit-method-payu-baloto");
-    let recarga9 = document.getElementById("xp-deposit-method-astropay-puntored");
+    let recarga1 = document.querySelectorAll(".xp-metodi-pagamento span")[0];
+    let recarga2 = document.querySelectorAll(".xp-metodi-pagamento span")[1];
+    let recarga3 = document.querySelectorAll(".xp-metodi-pagamento span")[2];
+    let recarga4 = document.querySelectorAll(".xp-metodi-pagamento span")[3];
+    let recarga5 = document.querySelectorAll(".xp-metodi-pagamento span")[4];
+    let recarga6 = document.querySelectorAll(".xp-metodi-pagamento span")[5];
+    let recarga7 = document.querySelectorAll(".xp-metodi-pagamento span")[6];
+    let recarga8 = document.querySelectorAll(".xp-metodi-pagamento span")[7];
+    let recarga9 = document.querySelectorAll(".xp-metodi-pagamento span")[8];
+
+
+    let recarga1Set = false
+    let recarga2Set = false
+    let recarga3Set = false
+    let recarga4Set = false
+    let recarga5Set = false
+    let recarga6Set = false
+    let recarga7Set = false
+    let recarga8Set = false
+    let recarga9Set = false
 
     let id1 = "xp-deposit-method-scratch-card"
     let id2 = "xp-deposit-method-payu-cc"
@@ -33,143 +44,161 @@ window.addEventListener('load', function () {
     let id8 = "xp-deposit-method-payu-baloto"
     let id9 = "xp-deposit-method-astropay-puntored"
 
-    let depositButton1 = document.querySelector(`#${id1} div button.xp-deposit-button`);
-    if (!depositButton1) return;
+    recarga1.addEventListener('click', function (e) {
+      let depositButton1 = document.querySelector(`#${id1} div button.xp-deposit-button`);
+      if (!depositButton1) return;
+      if (recarga1Set) return
+      depositButton1.addEventLister('click', function (e) {
+        let value = document.getElementById("scratch-card-code");
+        console.log(value)
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Mi cuenta :: Recargas',
+          'action': 'scratch-card',
+          'label': 'Depósito',
+          'value': value
+        });
 
-    depositButton1.addEventLister('click', function (e) {
-      let value = document.getElementById("scratch-card-code");
-      console.log(value)
-      dataLayer.push({
-        'event': 'ga_event',
-        'category': 'Mi cuenta :: Recargas',
-        'action': 'scratch-card',
-        'label': 'Depósito',
-        'value': value
-      });
-
+        recarga1Set = true;
+      })
     })
-    let depositButton2 = document.querySelector(`#${id2} div button.xp-deposit-button`);
-    if (!depositButton2) return;
-
-    depositButton2.addEventLister('click', function (e) {
-      let value = document.getElementById("payu-cc-deposit-amount");
-      console.log(value)
-      dataLayer.push({
-        'event': 'ga_event',
-        'category': 'Mi cuenta :: Recargas',
-        'action': 'payu-cc',
-        'label': 'Depósito',
-        'value': value
-      });
+    recarga2.addEventListener('click', function (e) {
+      let depositButton2 = document.querySelector(`#${id2} div button.xp-deposit-button`);
+      if (!depositButton2) return;
+      if (recarga2Set) return
+      depositButton2.addEventLister('click', function (e) {
+        let value = document.getElementById("payu-cc-deposit-amount");
+        console.log(value)
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Mi cuenta :: Recargas',
+          'action': 'payu-cc',
+          'label': 'Depósito',
+          'value': value
+        });
+      })
+      recarga2Set = true;
     })
-    let depositButton3 = document.querySelector(`#${id3} div button.xp-deposit-button`);
-    if (!depositButton3) return;
-
-    depositButton3.addEventLister('click', function (e) {
-      let value = document.getElementById("astropay-pse-deposit-amount");
-      console.log(value)
-      dataLayer.push({
-        'event': 'ga_event',
-        'category': 'Mi cuenta :: Recargas',
-        'action': 'astropay-pse',
-        'label': 'Depósito',
-        'value': value
-      });
+    recarga3.addEventListener('click', function (e) {
+      let depositButton3 = document.querySelector(`#${id3} div button.xp-deposit-button`);
+      if (!depositButton3) return;
+      if (recarga3Set) return
+      depositButton3.addEventLister('click', function (e) {
+        let value = document.getElementById("astropay-pse-deposit-amount");
+        console.log(value)
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Mi cuenta :: Recargas',
+          'action': 'astropay-pse',
+          'label': 'Depósito',
+          'value': value
+        });
+      })
+      recarga3Set = true;
     })
-    let depositButton4 = document.querySelector(`#${id4} div button.xp-deposit-button`);
-    if (!depositButton4) return;
-
-    depositButton4.addEventLister('click', function (e) {
-      let value = document.getElementById("payu-pse-deposit-amount");
-      console.log(value)
-      dataLayer.push({
-        'event': 'ga_event',
-        'category': 'Mi cuenta :: Recargas',
-        'action': 'payu-pse',
-        'label': 'Depósito',
-        'value': value
-      });
+    recarga4.addEventListener('click', function (e) {
+      let depositButton4 = document.querySelector(`#${id4} div button.xp-deposit-button`);
+      if (!depositButton4) return;
+      if (recarga4Set) return
+      depositButton4.addEventLister('click', function (e) {
+        let value = document.getElementById("payu-pse-deposit-amount");
+        console.log(value)
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Mi cuenta :: Recargas',
+          'action': 'payu-pse',
+          'label': 'Depósito',
+          'value': value
+        });
+      })
+      recarga4Set = true;
     })
-    let depositButton5 = document.querySelector(`#${id5} div button.xp-deposit-button`);
-    if (!depositButton5) return;
-
-    depositButton5.addEventLister('click', function (e) {
-      let value = document.getElementById("astropay-efecty-deposit-amount");
-      console.log(value)
-      dataLayer.push({
-        'event': 'ga_event',
-        'category': 'Mi cuenta :: Recargas',
-        'action': 'astropay-efecty',
-        'label': 'Depósito',
-        'value': value
-      });
+    recarga5.addEventListener('click', function (e) {
+      let depositButton5 = document.querySelector(`#${id5} div button.xp-deposit-button`);
+      if (!depositButton5) return;
+      if (recarga5Set) return
+      depositButton5.addEventLister('click', function (e) {
+        let value = document.getElementById("astropay-efecty-deposit-amount");
+        console.log(value)
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Mi cuenta :: Recargas',
+          'action': 'astropay-efecty',
+          'label': 'Depósito',
+          'value': value
+        });
+      })
+      recarga5Set = true;
     })
-    let depositButton6 = document.querySelector(`#${id6} div button.xp-deposit-button`);
-    if (!depositButton6) return;
-
-    depositButton6.addEventLister('click', function (e) {
-      let value = document.getElementById("payu-efecty-deposit-amount");
-      console.log(value)
-      dataLayer.push({
-        'event': 'ga_event',
-        'category': 'Mi cuenta :: Recargas',
-        'action': 'payu-efecty',
-        'label': 'Depósito',
-        'value': value
-      });
+    recarga6.addEventListener('click', function (e) {
+      let depositButton6 = document.querySelector(`#${id6} div button.xp-deposit-button`);
+      if (!depositButton6) return;
+      if (recarga6Set) return
+      depositButton6.addEventLister('click', function (e) {
+        let value = document.getElementById("payu-efecty-deposit-amount");
+        console.log(value)
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Mi cuenta :: Recargas',
+          'action': 'payu-efecty',
+          'label': 'Depósito',
+          'value': value
+        });
+      })
+      recarga6Set = true;
     })
-    let depositButton7 = document.querySelector(`#${id7} div button.xp-deposit-button`);
-    if (!depositButton7) return;
-
-    depositButton7.addEventLister('click', function (e) {
-      let value = document.getElementById("astropay-baloto-deposit-amount");
-      console.log(value)
-      dataLayer.push({
-        'event': 'ga_event',
-        'category': 'Mi cuenta :: Recargas',
-        'action': 'astropay-baloto',
-        'label': 'Depósito',
-        'value': value
-      });
+    recarga7.addEventListener('click', function (e) {
+      let depositButton7 = document.querySelector(`#${id7} div button.xp-deposit-button`);
+      if (!depositButton7) return;
+      if (recarga7Set) return
+      depositButton7.addEventLister('click', function (e) {
+        let value = document.getElementById("astropay-baloto-deposit-amount");
+        console.log(value)
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Mi cuenta :: Recargas',
+          'action': 'astropay-baloto',
+          'label': 'Depósito',
+          'value': value
+        });
+      })
+      recarga7Set = true;
     })
-    let depositButton8 = document.querySelector(`#${id8} div button.xp-deposit-button`);
-    if (!depositButton8) return;
-
-    depositButton8.addEventLister('click', function (e) {
-      let value = document.getElementById("payu-baloto-deposit-amount");
-      console.log(value)
-      dataLayer.push({
-        'event': 'ga_event',
-        'category': 'Mi cuenta :: Recargas',
-        'action': 'payu-baloto',
-        'label': 'Depósito',
-        'value': value
-      });
+    recarga8.addEventListener('click', function (e) {
+      let depositButton8 = document.querySelector(`#${id8} div button.xp-deposit-button`);
+      if (!depositButton8) return;
+      if (recarga8Set) return
+      depositButton8.addEventLister('click', function (e) {
+        let value = document.getElementById("payu-baloto-deposit-amount");
+        console.log(value)
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Mi cuenta :: Recargas',
+          'action': 'payu-baloto',
+          'label': 'Depósito',
+          'value': value
+        });
+      })
+      recarga8Set = true;
     })
-    let depositButton9 = document.querySelector(`#${id9} div button.xp-deposit-button`);
-    if (!depositButton9) return;
-
-    depositButton9.addEventLister('click', function (e) {
-      let value = document.getElementById("astropay-puntored-deposit-amount");
-      console.log(value)
-      dataLayer.push({
-        'event': 'ga_event',
-        'category': 'Mi cuenta :: Recargas',
-        'action': 'astropay-puntored',
-        'label': 'Depósito',
-        'value': value
-      });
+    recarga9.addEventListener('click', function (e) {
+      let depositButton9 = document.querySelector(`#${id9} div button.xp-deposit-button`);
+      if (!depositButton9) return;
+      if (recarga9Set) return
+      depositButton9.addEventLister('click', function (e) {
+        let value = document.getElementById("astropay-puntored-deposit-amount");
+        console.log(value)
+        dataLayer.push({
+          'event': 'ga_event',
+          'category': 'Mi cuenta :: Recargas',
+          'action': 'astropay-puntored',
+          'label': 'Depósito',
+          'value': value
+        });
+      })
+      recarga9Set = true;
     })
-    console.log(depositButton1);
-    console.log(depositButton2);
-    console.log(depositButton3);
-    console.log(depositButton4);
-    console.log(depositButton5);
-    console.log(depositButton6);
-    console.log(depositButton7);
-    console.log(depositButton8);
-    console.log(depositButton9);
-
+    recarga1.click();
   }
 
   function setRetiro() {
@@ -254,5 +283,5 @@ window.addEventListener('load', function () {
   setTimeout(() => {
     setRecarga();
     setRetiro();
-  }, 5000);
+  }, 7000);
 })
