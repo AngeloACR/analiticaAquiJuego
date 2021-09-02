@@ -48,7 +48,7 @@ window.addEventListener('load', function () {
       console.log(depositButton1);
       if (!depositButton1) return;
       if (recarga1Set) return
-      depositButton1.addEventLister('click', function (e) {
+      depositButton1.addEventListener('click', function (e) {
         let value = document.getElementById("scratch-card-code");
         console.log(value)
         dataLayer.push({
@@ -66,7 +66,7 @@ window.addEventListener('load', function () {
       let depositButton2 = document.querySelector(`#${id2} div button.xp-deposit-button`);
       if (!depositButton2) return;
       if (recarga2Set) return
-      depositButton2.addEventLister('click', function (e) {
+      depositButton2.addEventListener('click', function (e) {
         let value = document.getElementById("payu-cc-deposit-amount");
         console.log(value)
         dataLayer.push({
@@ -83,7 +83,7 @@ window.addEventListener('load', function () {
       let depositButton3 = document.querySelector(`#${id3} div button.xp-deposit-button`);
       if (!depositButton3) return;
       if (recarga3Set) return
-      depositButton3.addEventLister('click', function (e) {
+      depositButton3.addEventListener('click', function (e) {
         let value = document.getElementById("astropay-pse-deposit-amount");
         console.log(value)
         dataLayer.push({
@@ -100,7 +100,7 @@ window.addEventListener('load', function () {
       let depositButton4 = document.querySelector(`#${id4} div button.xp-deposit-button`);
       if (!depositButton4) return;
       if (recarga4Set) return
-      depositButton4.addEventLister('click', function (e) {
+      depositButton4.addEventListener('click', function (e) {
         let value = document.getElementById("payu-pse-deposit-amount");
         console.log(value)
         dataLayer.push({
@@ -117,7 +117,7 @@ window.addEventListener('load', function () {
       let depositButton5 = document.querySelector(`#${id5} div button.xp-deposit-button`);
       if (!depositButton5) return;
       if (recarga5Set) return
-      depositButton5.addEventLister('click', function (e) {
+      depositButton5.addEventListener('click', function (e) {
         let value = document.getElementById("astropay-efecty-deposit-amount");
         console.log(value)
         dataLayer.push({
@@ -134,7 +134,7 @@ window.addEventListener('load', function () {
       let depositButton6 = document.querySelector(`#${id6} div button.xp-deposit-button`);
       if (!depositButton6) return;
       if (recarga6Set) return
-      depositButton6.addEventLister('click', function (e) {
+      depositButton6.addEventListener('click', function (e) {
         let value = document.getElementById("payu-efecty-deposit-amount");
         console.log(value)
         dataLayer.push({
@@ -151,7 +151,7 @@ window.addEventListener('load', function () {
       let depositButton7 = document.querySelector(`#${id7} div button.xp-deposit-button`);
       if (!depositButton7) return;
       if (recarga7Set) return
-      depositButton7.addEventLister('click', function (e) {
+      depositButton7.addEventListener('click', function (e) {
         let value = document.getElementById("astropay-baloto-deposit-amount");
         console.log(value)
         dataLayer.push({
@@ -168,7 +168,7 @@ window.addEventListener('load', function () {
       let depositButton8 = document.querySelector(`#${id8} div button.xp-deposit-button`);
       if (!depositButton8) return;
       if (recarga8Set) return
-      depositButton8.addEventLister('click', function (e) {
+      depositButton8.addEventListener('click', function (e) {
         let value = document.getElementById("payu-baloto-deposit-amount");
         console.log(value)
         dataLayer.push({
@@ -185,7 +185,7 @@ window.addEventListener('load', function () {
       let depositButton9 = document.querySelector(`#${id9} div button.xp-deposit-button`);
       if (!depositButton9) return;
       if (recarga9Set) return
-      depositButton9.addEventLister('click', function (e) {
+      depositButton9.addEventListener('click', function (e) {
         let value = document.getElementById("astropay-puntored-deposit-amount");
         console.log(value)
         dataLayer.push({
