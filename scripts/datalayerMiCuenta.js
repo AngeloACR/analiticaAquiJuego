@@ -45,7 +45,6 @@ window.addEventListener('load', function () {
 
     recarga1.addEventListener('click', function (e) {
       let depositButton1 = document.querySelector(`#${id1} div button.xp-deposit-button`);
-      console.log(depositButton1);
       if (!depositButton1) return;
       if (recarga1Set) return
       depositButton1.addEventListener('click', function (e) {

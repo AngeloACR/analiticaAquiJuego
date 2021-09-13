@@ -7,8 +7,6 @@ window.addEventListener('load', function () {
     if (!login) return;
     let registro = document.querySelectorAll(".bottone.bottone-login")[1]
     if (!registro) return;
-    console.log(login)
-    console.log(registro)
     login.addEventListener('click', function (e) {
       let label = 'Login'
       console.log(label);
@@ -53,8 +51,8 @@ window.addEventListener('load', function () {
       })
     });
   }
-  setMenuPrincipal();
 
+  
   function setBanners() {
     let bannerIzquierda = document.querySelector("#sidebar-sx .banner-widget-dx a img")
     if (!bannerIzquierda) return;
@@ -62,6 +60,9 @@ window.addEventListener('load', function () {
     if (!bannersCentro) return;
     let bannerDerecha = document.querySelector("#sidebar-dx .banner-widget-dx a img")
     if (!bannerDerecha) return;
+    console.log(bannerDerecha)
+    console.log(bannerIzquierda)
+    console.log(bannersCentro)
     let imgSrcIzq = bannerIzquierda.src;
     let idIzq = imgSrcIzq;
     let nameIzq = imgSrcIzq;
@@ -1105,5 +1106,12 @@ window.addEventListener('load', function () {
     });
   }
   setMenuPromo();
+
+  setTimeout(() => {
+    setMenuPrincipal();
+    
+  }, 3000);
+
+
 
 })
