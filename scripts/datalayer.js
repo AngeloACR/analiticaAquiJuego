@@ -1110,7 +1110,7 @@ window.addEventListener('load', function () {
   setApuestasBorradasLive()
   setApuestasBotonesLive()
   
-  }, 3000);
+  }, 5000);
 
 
 
