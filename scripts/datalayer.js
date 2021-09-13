@@ -224,7 +224,6 @@ window.addEventListener('load', function () {
       }
     });
   }
-  setBanners();
 
   function setFiltroLateral() {
     let filtrosHorarios = document.querySelectorAll("#sidebar-sx .fasce-orarie span");
@@ -1109,6 +1108,7 @@ window.addEventListener('load', function () {
 
   setTimeout(() => {
     setMenuPrincipal();
+    setBanners();
     
   }, 3000);
 
