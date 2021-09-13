@@ -1007,6 +1007,7 @@ window.addEventListener('load', function () {
   function setBannerCasino() {
     let banners = document.querySelectorAll(".banner-casino div div div .carousel-item img");
     if (!banners) return;
+    console.log(banners);
     banners.forEach((banner, index) => {
       let imgSrc = banner.src;
       let id = imgSrc;
