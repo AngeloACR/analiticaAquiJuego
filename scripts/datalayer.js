@@ -927,9 +927,6 @@ window.addEventListener('load', function () {
     })
 
   }
-  setApuestasLive();
-  setApuestasBorradasLive()
-  setApuestasBotonesLive()
 
   /*CASINO*/
 
@@ -1109,7 +1106,10 @@ window.addEventListener('load', function () {
   setTimeout(() => {
     setMenuPrincipal();
     setBanners();
-    
+    setApuestasLive();
+  setApuestasBorradasLive()
+  setApuestasBotonesLive()
+  
   }, 3000);
 
 
